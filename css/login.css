@@ -1,0 +1,30 @@
+/* Hoja de estilos de la página de login */
+
+.contenedor {
+    float: none;
+    margin: 60px auto auto;
+}
+
+.panel-heading {
+    background-color: #FF9B40 !important;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.btn-default {
+    background-color: #FFD7B3;
+    border-color: #FFD7B3;
+    color: #333333;
+}
+
+.btn-default:hover {
+    background-color: #FF9B40;
+    border-color: #FF9B40;
+}
+
+.mensaje-error {
+    margin-bottom: 18px;
+	font-size: 16px;
+	color: #D90000;
+    text-align: center;
+}
