@@ -1,7 +1,7 @@
 <p>Para localizar un expediente puede ingresar uno o varios datos. Considere que la búsqueda se realizará con todos los elementos ingresados.</p>
 <p>Considere que los resultados de la búsqueda serán la suma de todos los elementos ingresados.</p>
 
-<form action="" method="post" id="formBuscador" name="formBuscador" class="form-horizontal">
+<form action="lista-de-expedientes" method="post" id="formBuscador" name="formBuscador" class="form-horizontal">
 	<div class="form-group">
 		<label class="col-sm-2 control-label">Fecha de inicio</label>
 		<div class="col-sm-3">
@@ -21,6 +21,6 @@
 	</div>
 	
 	<div class="text-right">
-		<button id="btn_buscar" name="btn_buscar" class="btn btn-primary">Buscar</button>
+		<input type="submit" id="btn_buscar" name="btn_buscar" value="Buscar" class="btn btn-primary" />
 	</div>
 </form>

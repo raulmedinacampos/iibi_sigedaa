@@ -1,9 +1,9 @@
 <?php
 session_start();
 
-$contenido = 'documentos/folio_salida';
+$header['js'][] = 'adjuntar_a_expediente';
 
-$header['js'][] = 'folio_salida';
+$contenido = 'bandejas/adjuntar_a_expedientes';
 
 $data = array(
 		'header' => $header,

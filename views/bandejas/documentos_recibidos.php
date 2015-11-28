@@ -57,7 +57,8 @@
       <div class="modal-body"></div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn btn-primary">OK</button>
+        <button id="btn_modal_ok" type="button" class="btn btn-primary">OK</button>
+        <button id="btn_modal_final" type="button" class="btn btn-primary">OK</button>
       </div>
     </div>
   </div>

@@ -1,5 +1,7 @@
 function enviarDatos() {
-	$("#btn_generar").click(function() {
+	$("#btn_generar").click(function(e) {
+		e.preventDefault();
+		
 		$(".modal-dialog").addClass("modal-sm");
 		$(".modal-title").html('Folio de salida');
 		$(".modal-body").html('<p>El número de oficio es: <strong>IIBI / SAD / folio / año</strong></p>');

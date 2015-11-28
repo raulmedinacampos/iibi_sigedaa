@@ -1,5 +1,7 @@
 function enviarDatos() {
-	$("#btn_obtener").click(function() {
+	$("#btn_obtener").click(function(e) {
+		e.preventDefault();
+		
 		$(".modal-dialog").addClass("modal-sm");
 		$(".modal-title").html('Recepción de documentos - Información para sello');
 		$(".modal-body").html('<p>Número de folio: E / ÁREA / 1234 / 2015</p><p>Recibió: ABC</p><p>Fecha de recepción: dd/mm/aaaa</p><p>Hora: hh:mm</p>');

@@ -1,15 +1,8 @@
-<script type="text/javascript" src="<?php echo base_url('js/bootstrap-filestyle.min.js'); ?>"></script>
-<?php
-echo form_open_multipart();
-echo '<h4>Adjuntar documento digital al folio E/SAD/123/2015</h4>';
+<script type="text/javascript" src="../js/bootstrap-filestyle.min.js"></script>
 
-echo form_label ( 'Buscar' );
-$attr = array (
-		'id' => 'documento',
-		'name' => 'documento',
-		'class' => 'filestyle',
-		'data-buttonText' => 'Examinar' 
-);
-echo form_upload ( $attr );
-echo form_close ();
-?>
+<h4>Adjuntar documento digital al folio E/SAD/123/2015</h4>
+
+<form method="post" enctype="multipart/form-data" id="formAdjuntar" name="formAdjuntar" action="">
+	<label>Buscar</label>
+	<input type="file" id="documento" name="documento" class="filestyle" data-buttonText="Examinar" />
+</form>

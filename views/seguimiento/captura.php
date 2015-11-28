@@ -68,7 +68,7 @@
 	<div class="row text-right">
 		<div class="col-sm-12">
 			<button id="btn_cancelar" name="btn_cancelar" class="btn btn-default">Cancelar</button>
-			<button id="btn_generar" name="btn_generar" class="btn btn-primary">Generar número de oficio</button>
+			<button id="btn_generar" name="btn_generar" class="btn btn-primary">Ingreso</button>
 		</div>
 	</div>
 </form>

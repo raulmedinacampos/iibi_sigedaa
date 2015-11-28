@@ -11,21 +11,21 @@
 	</tr>
 	<tr>
 		<td>1</td>
-		<td><a href="<?php echo base_url('documentos/detalle_documento'); ?>">IIBI - SAD - [D] Clave (12345) 2015</a></td>
+		<td><a href="detalle-documento">IIBI - SAD - [D] Clave (12345) 2015</a></td>
 		<td>Solicitud 1</td>
 		<td>Fecha y hora</td>
 		<td>Librero</td>
 	</tr>
 	<tr>
 		<td>2</td>
-		<td><a href="<?php echo base_url('documentos/detalle_documento'); ?>">IIBI - SAD - [D] Clave (12345) 2015</a></td>
+		<td><a href="detalle-documento">IIBI - SAD - [D] Clave (12345) 2015</a></td>
 		<td>Solicitud 2</td>
 		<td>Fecha y hora</td>
 		<td>Estante/caja</td>
 	</tr>
 	<tr>
 		<td>3</td>
-		<td><a href="<?php echo base_url('documentos/detalle_documento'); ?>">IIBI - SAD - [D] Clave (12345) 2015</a></td>
+		<td><a href="detalle-documento">IIBI - SAD - [D] Clave (12345) 2015</a></td>
 		<td>Solicitud 3</td>
 		<td>Fecha y hora</td>
 		<td>Por asignar</td>

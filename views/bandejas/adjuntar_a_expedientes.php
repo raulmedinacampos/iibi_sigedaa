@@ -36,23 +36,8 @@
 </table>
 
 <div class="text-right">
-<?php
-$attr = array(
-		'id'		=> 'btn_regresar',
-		'name'		=> 'btn_regresar',
-		'class'		=> 'btn btn-default',
-		'content'	=> 'Regresar'
-);
-echo form_button($attr);
-
-$attr = array(
-		'id'		=> 'btn_integrar',
-		'name'		=> 'btn_integrar',
-		'class'		=> 'btn btn-primary',
-		'content'	=> 'Integrar'
-);
-echo form_button($attr);
-?>
+	<button id="btn_regresar" name="btn_regresar" class="btn btn-default">Regresar</button>
+	<button id="btn_integrar" name="btn_integrar" class="btn btn-primary">Integrar</button>
 </div>
 
 <!-- Ventana modal -->

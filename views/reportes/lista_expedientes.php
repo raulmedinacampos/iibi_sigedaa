@@ -21,27 +21,51 @@ $opt = array(
 	</tr>
 	<tr>
 		<td>1</td>
-		<td><a href="<?php echo base_url('bandejas/contenido-expediente'); ?>">IIBI - SAD - [D] Clave (12345) 2015</a></td>
+		<td><a href="../bandejas/contenido-expediente">IIBI - SAD - [D] Clave (12345) 2015</a></td>
 		<td>Solicitud 1</td>
 		<td>Fecha y hora</td>
 		<td>Librero</td>
-		<td><?php echo form_dropdown('dd_accion', $opt, '', 'id="dd_accion" class="form-control"')?></td>
+		<td>
+			<select id="dd_accion" name="dd_accion" class="form-control">
+				<option value="">Seleccione</option>
+				<option value="1">Ver estado</option>
+				<option value="2">Modificar expediente</option>
+				<option value="3">Modificar estado del expediente</option>
+				<option value="4">Cancelar expediente</option>
+			</select>
+		</td>
 	</tr>
 	<tr>
 		<td>2</td>
-		<td><a href="<?php echo base_url('bandejas/contenido-expediente'); ?>">IIBI - SAD - [D] Clave (12345) 2015</a></td>
+		<td><a href="../bandejas/contenido-expediente">IIBI - SAD - [D] Clave (12345) 2015</a></td>
 		<td>Solicitud 2</td>
 		<td>Fecha y hora</td>
 		<td>Estante/caja</td>
-		<td><?php echo form_dropdown('dd_accion', $opt, '', 'id="dd_accion" class="form-control"')?></td>
+		<td>
+			<select id="dd_accion" name="dd_accion" class="form-control">
+				<option value="">Seleccione</option>
+				<option value="1">Ver estado</option>
+				<option value="2">Modificar expediente</option>
+				<option value="3">Modificar estado del expediente</option>
+				<option value="4">Cancelar expediente</option>
+			</select>
+		</td>
 	</tr>
 	<tr>
 		<td>3</td>
-		<td><a href="<?php echo base_url('bandejas/contenido-expediente'); ?>">IIBI - SAD - [D] Clave (12345) 2015</a></td>
+		<td><a href="../bandejas/contenido-expediente">IIBI - SAD - [D] Clave (12345) 2015</a></td>
 		<td>Solicitud 3</td>
 		<td>Fecha y hora</td>
 		<td>Por asignar</td>
-		<td><?php echo form_dropdown('dd_accion', $opt, '', 'id="dd_accion" class="form-control"')?></td>
+		<td>
+			<select id="dd_accion" name="dd_accion" class="form-control">
+				<option value="">Seleccione</option>
+				<option value="1">Ver estado</option>
+				<option value="2">Modificar expediente</option>
+				<option value="3">Modificar estado del expediente</option>
+				<option value="4">Cancelar expediente</option>
+			</select>
+		</td>
 	</tr>
 </table>
 
@@ -55,10 +79,10 @@ $opt = array(
       </div>
       <div class="modal-body"></div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-        <button id="btn_modal_ok" type="button" class="btn btn-primary">OK</button>
-        <button id="btn_modal_final" type="button" class="btn btn-primary">OK</button>
-      </div>
+        <button id="btn_modal_terminar" type="button" class="btn btn-primary">Cancelar o terminar trámite</button>
+        <button id="btn_modal_actualizar" type="button" class="btn btn-primary">Actualizar</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+        </div>
     </div>
   </div>
 </div>

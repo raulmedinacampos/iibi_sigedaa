@@ -1,9 +1,9 @@
 <?php
 session_start();
 
-$contenido = 'documentos/folio_salida';
+$contenido = 'documentos/modificar';
 
-$header['js'][] = 'folio_salida';
+$header['js'][] = 'captura_documentos';
 
 $data = array(
 		'header' => $header,

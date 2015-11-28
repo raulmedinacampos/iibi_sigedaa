@@ -65,7 +65,7 @@
 					<input id="asunto" name="asunto" class="form-control" />
 				</div>
 				
-				<label class="col-sm-2 control-label obligatorio">Tipo de documento</label>
+				<label class="col-sm-2 control-label">Tipo de documento</label>
 				<div class="col-sm-4">
 					<select id="tipo_documento" name="tipo_documento" class="form-control">
 						<option value="">Seleccione</option>
@@ -95,7 +95,7 @@
 			</div>
 			
 			<div class="form-group">
-				<label class="col-sm-2 control-label">Núm. de hojas incluyendo anexos</label>
+				<label class="col-sm-2 control-label">Número de hojas</label>
 				<div class="col-sm-1">
 					<input id="num_hojas" name="num_hojas" class="form-control" />
 				</div>

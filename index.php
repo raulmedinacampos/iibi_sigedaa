@@ -19,8 +19,16 @@ Flight::route('/bandejas/contenido-expediente/', function() {
 	require_once 'controllers/bandejas/contenido_expediente_controller.php';
 });
 
+Flight::route('/bandejas/abrir-expediente/', function() {
+	require_once 'controllers/bandejas/abrir_expediente_controller.php';
+});
+
 Flight::route('/bandejas/documentos-recibidos/', function() {
 	require_once 'controllers/bandejas/documentos_recibidos_controller.php';
+});
+
+Flight::route('/bandejas/adjuntar-a-expediente/', function() {
+	require_once 'controllers/bandejas/adjuntar_expediente_controller.php';
 });
 
 Flight::route('/bandejas/documentos-atendidos/', function() {
@@ -37,8 +45,16 @@ Flight::route('/documentos/asignar-folio-salida/', function() {
 	require_once 'controllers/documentos/folio_salida_controller.php';
 });
 
+Flight::route('/documentos/adjuntar-documento-digital/', function() {
+	require_once 'controllers/documentos/adjuntar_digital_controller.php';
+});
+
 Flight::route('/documentos/adjuntar-documento-anexo/', function() {
 	require_once 'controllers/documentos/documento_anexo_controller.php';
+});
+
+Flight::route('/documentos/remision-de-asuntos/', function() {
+	require_once 'controllers/documentos/remision_asuntos_controller.php';
 });
 
 Flight::route('/documentos/reporte-entrega-recepcion/', function() {
@@ -47,6 +63,14 @@ Flight::route('/documentos/reporte-entrega-recepcion/', function() {
 
 Flight::route('/documentos/modificar-documento/', function() {
 	require_once 'controllers/documentos/modificar_documento_controller.php';
+});
+
+Flight::route('/documentos/lista-de-expedientes/', function() {
+	require_once 'controllers/documentos/lista_expedientes_controller.php';
+});
+
+Flight::route('/documentos/detalle-documento/', function() {
+	require_once 'controllers/documentos/detalle_documento_controller.php';
 });
 /* Fin Documentos*/
 
@@ -58,11 +82,19 @@ Flight::route('/seguimiento/integracion-de-documentos/', function() {
 Flight::route('/seguimiento/captura-de-informacion/', function() {
 	require_once 'controllers/seguimiento/captura_informacion_controller.php';
 });
+
+Flight::route('/seguimiento/estado-del-tramite', function() {
+	require_once 'controllers/seguimiento/estado_tramite_controller.php';
+});
 /* Fin Control y seguimientos*/
 
 /* Sección Búsquedas */
 Flight::route('/busquedas/por-expediente/', function() {
 	require_once 'controllers/busquedas/por_expediente_controller.php';
+});
+
+Flight::route('/busquedas/lista-de-expedientes/', function() {
+	require_once 'controllers/busquedas/lista_expedientes_controller.php';
 });
 /* Fin Búsquedas */
 

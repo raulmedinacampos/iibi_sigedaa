@@ -1,60 +1,46 @@
-<?php
-$attr = array(
-		'id' => 'formEstadoTramite',
-		'name' => 'formEstadoTramite',
-		'class' => 'form-horizontal'
-);
-
-echo form_open('', $attr);
-
-echo '<div class="form-group">';
-echo form_label('Núm. de expediente', '', array('class' => 'col-sm-4'));
-echo '<div class="col-sm-8">IIBI - SAD - [D]fclave (12345) 2015</div>';
-echo '</div>';
-
-echo '<div class="form-group">';
-echo form_label('Trámite', '', array('class' => 'col-sm-4'));
-echo '<div class="col-sm-8">Nombre del trámite o servicio</div>';
-echo '</div>';
-
-echo '<div class="form-group">';
-echo form_label('Duración estimada', '', array('class' => 'col-sm-4'));
-echo '<div class="col-sm-8">Duración estimada en días hábiles</div>';
-echo '</div>';
-
-echo '<div class="form-group">';
-echo form_label('Inicio', '', array('class' => 'col-sm-2'));
-echo '<div class="col-sm-2">dd/mm/aa</div>';
-echo form_label('Avance', '', array('class' => 'col-sm-2'));
-echo '<div class="col-sm-2">avance %</div>';
-echo '</div>';
-
-echo '<div class="form-group">';
-echo form_label('Etapa actual', '', array('class' => 'col-sm-4'));
-echo '<div class="col-sm-8">Nombre de la etapa</div>';
-echo '</div>';
-
-echo '<div class="form-group">';
-echo form_label('Responsable de la etapa', '', array('class' => 'col-sm-4'));
-echo '<div class="col-sm-8">Persona y área responsable de la etapa</div>';
-echo '</div>';
-
-echo '<div class="form-group">';
-echo form_label('Descripción', '', array('class' => 'col-sm-4'));
-echo '<div class="col-sm-8">Descripción del expediente</div>';
-echo '</div>';
-
-echo '<div class="form-group">';
-echo form_label('Observaciones sobre el avance del trámite', '', array('class' => 'col-sm-4'));
-$attr = array(
-		'id' => 'observaciones',
-		'name' => 'observaciones',
-		'class' => 'form-control',
-		'rows' => 2
-);
-echo '<div class="col-sm-8">';
-echo form_textarea($attr);
-echo '</div>';
-echo '</div>';
-echo form_close();
-?>
+<form action="" method="post" id="formEstadoTramite" name="formEstadoTramite" class="form-horizontal">
+	<div class="form-group">
+		<label class="col-sm-4">Núm. de expediente</label>
+		<div class="col-sm-8">IIBI - SAD - [D]fclave (12345) 2015</div>
+	</div>
+	
+	<div class="form-group">
+		<label class="col-sm-4">Trámite</label>
+		<div class="col-sm-8">Nombre del trámite o servicio</div>
+	</div>
+	
+	<div class="form-group">
+		<label class="col-sm-4">Duración estimada</label>
+		<div class="col-sm-8">Duración estimada en días hábiles</div>
+	</div>
+	
+	<div class="form-group">
+		<label class="col-sm-2">Inicio</label>
+		<div class="col-sm-2">dd/mm/aa</div>
+		
+		<label class="col-sm-2">Avance</label>
+		<div class="col-sm-2">avance %</div>
+	</div>
+	
+	<div class="form-group">
+		<label class="col-sm-4">Etapa actual</label>
+		<div class="col-sm-8">Nombre de la etapa</div>
+	</div>
+	
+	<div class="form-group">
+		<label class="col-sm-4">Responsable de la etapa</label>
+		<div class="col-sm-8">Persona y área responsable de la etapa</div>
+	</div>
+	
+	<div class="form-group">
+		<label class="col-sm-4">Descripción</label>
+		<div class="col-sm-8">Descripción del expediente</div>
+	</div>
+	
+	<div class="form-group">
+		<label class="col-sm-4">Observaciones sobre el avance del trámite</label>
+		<div class="col-sm-8">
+			<textarea rows="2" id="observaciones" name="observaciones" class="form-control"></textarea>
+		</div>
+	</div>
+</form>

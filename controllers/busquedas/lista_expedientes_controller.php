@@ -1,9 +1,9 @@
 <?php
 session_start();
 
-$contenido = 'documentos/folio_salida';
+$contenido = 'reportes/lista_expedientes';
 
-$header['js'][] = 'folio_salida';
+$header['js'][] = 'expedientes';
 
 $data = array(
 		'header' => $header,
