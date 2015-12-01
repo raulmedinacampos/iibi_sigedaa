@@ -86,6 +86,14 @@ Flight::route('/seguimiento/captura-de-informacion/', function() {
 Flight::route('/seguimiento/estado-del-tramite', function() {
 	require_once 'controllers/seguimiento/estado_tramite_controller.php';
 });
+
+Flight::route('/seguimiento/cancelar-tramite', function() {
+	require_once 'controllers/seguimiento/cancelar_tramite_controller.php';
+});
+
+Flight::route('/seguimiento/informacion-del-tramite', function() {
+	require_once 'controllers/seguimiento/informacion_tramite_controller.php';
+});
 /* Fin Control y seguimientos*/
 
 /* Sección Búsquedas */
@@ -97,6 +105,16 @@ Flight::route('/busquedas/lista-de-expedientes/', function() {
 	require_once 'controllers/busquedas/lista_expedientes_controller.php';
 });
 /* Fin Búsquedas */
+
+/* Seccion Archivo */
+Flight::route('/archivo/expedientes/', function() {
+	require_once 'controllers/archivo/expedientes_controller.php';
+});
+
+Flight::route('/archivo/modificar-expediente/', function() {
+	require_once 'controllers/archivo/modificar_expediente_controller.php';
+});
+/* Fin Archivo */
 
 Flight::route('/salir/', function() {
 	session_start();

@@ -109,7 +109,7 @@
 								data-toggle="dropdown" role="button" aria-haspopup="true"
 								aria-expanded="false">Archivo <span class="caret"></span></a>
 								<ul class="dropdown-menu">
-									<li><a href="#">Expedientes</a></li>
+									<li><a href="/sigedaa/archivo/expedientes">Expedientes</a></li>
 									<li><a href="#">Inventario de documentos</a></li>
 									<li><a href="#">Modificar expediente</a></li>
 									<li><a href="#">Consolidación de expedientes</a></li>

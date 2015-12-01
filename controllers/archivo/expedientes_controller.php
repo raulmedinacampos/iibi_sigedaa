@@ -1,12 +1,9 @@
 <?php
 session_start();
 
-$contenido = 'seguimiento/captura';
-
-$header['js'][] = 'integracion_documentos';
+$contenido = 'archivo/expedientes';
 
 $data = array(
-		'header' => $header,
 		'contenido' => $contenido,
 );
 
