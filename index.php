@@ -97,12 +97,20 @@ Flight::route('/seguimiento/informacion-del-tramite', function() {
 /* Fin Control y seguimientos*/
 
 /* Sección Búsquedas */
+Flight::route('/busquedas/por-indices/', function() {
+	require_once 'controllers/busquedas/por_indices_controller.php';
+});
+
 Flight::route('/busquedas/por-expediente/', function() {
 	require_once 'controllers/busquedas/por_expediente_controller.php';
 });
 
 Flight::route('/busquedas/lista-de-expedientes/', function() {
 	require_once 'controllers/busquedas/lista_expedientes_controller.php';
+});
+
+Flight::route('/busquedas/contenido-expediente', function() {
+	require_once 'controllers/busquedas/contenido_expediente_controller.php';
 });
 /* Fin Búsquedas */
 

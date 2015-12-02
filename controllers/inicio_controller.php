@@ -1,6 +1,4 @@
 <?php
-/*comentario de Daf*/
-
 $header['css'][] = 'login';
 $header['menu'] = 'no';
 
