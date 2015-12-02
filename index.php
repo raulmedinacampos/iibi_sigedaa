@@ -114,6 +114,14 @@ Flight::route('/archivo/expedientes/', function() {
 Flight::route('/archivo/modificar-expediente/', function() {
 	require_once 'controllers/archivo/modificar_expediente_controller.php';
 });
+
+Flight::route('/archivo/inventario-general/', function() {
+	require_once 'controllers/archivo/inventario_general_controller.php';
+});
+
+Flight::route('/archivo/traslado-de-expedientes', function() {
+	require_once 'controllers/archivo/traslado_expedientes_controller.php';
+});
 /* Fin Archivo */
 
 Flight::route('/salir/', function() {

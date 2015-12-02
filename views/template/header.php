@@ -110,10 +110,10 @@
 								aria-expanded="false">Archivo <span class="caret"></span></a>
 								<ul class="dropdown-menu">
 									<li><a href="/sigedaa/archivo/expedientes">Expedientes</a></li>
-									<li><a href="#">Inventario de documentos</a></li>
+									<li><a href="/sigedaa/archivo/inventario-general">Inventario de documentos</a></li>
 									<li><a href="#">Modificar expediente</a></li>
 									<li><a href="#">Consolidación de expedientes</a></li>
-									<li><a href="#">Traslado de expedientes</a></li>
+									<li><a href="/sigedaa/archivo/traslado-de-expedientes">Traslado de expedientes</a></li>
 								</ul></li>
 							<li class="dropdown"><a href="#" class="dropdown-toggle"
 								data-toggle="dropdown" role="button" aria-haspopup="true"
