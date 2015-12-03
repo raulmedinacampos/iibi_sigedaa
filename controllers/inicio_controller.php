@@ -1,5 +1,6 @@
 <?php
 $header['css'][] = 'login';
+$header['js'][] = 'login';
 $header['menu'] = 'no';
 
 $contenido = 'login';
