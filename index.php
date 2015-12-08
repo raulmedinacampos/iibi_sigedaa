@@ -2,8 +2,6 @@
 require 'flight/Flight.php';
 require 'inc/consultas.inc.php';
 
-/*Comentario*/
-
 Flight::route('/', function() {
 	require_once 'controllers/inicio_controller.php';
 });
