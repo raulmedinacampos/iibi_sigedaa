@@ -47,7 +47,7 @@
 	<div class="form-group">
 		<label class="col-sm-2 control-label">Dependencia UNAM</label>
 		<div class="col-sm-4">
-			<select id="tipo_documento" name="tipo_documento" class="form-control">
+			<select id="dependencia_unam" name="dependencia_unam" class="form-control">
 				<option value="">Seleccione</option>
 			</select>
 		</div>
@@ -103,7 +103,7 @@
 	<div class="form-group">
 		<label class="col-sm-2 control-label">Para atender por</label>
 		<div class="col-sm-4">
-			<select id="tipo_documento" name="tipo_documento" class="form-control">
+			<select id="atender_por" name="atender_por" class="form-control">
 				<option value="">Seleccione</option>
 			</select>
 		</div>
