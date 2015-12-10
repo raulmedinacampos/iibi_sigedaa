@@ -47,9 +47,7 @@
 	<div class="form-group">
 		<label class="col-sm-2 control-label">Dependencia UNAM</label>
 		<div class="col-sm-4">
-			<select id="dependencia_unam" name="dependencia_unam" class="form-control">
-				<option value="">Seleccione</option>
-			</select>
+			<input id="dependencia_unam" name="dependencia_unam" class="form-control" />
 		</div>
 		
 		<div class="checkbox col-sm-2 control-label">
@@ -80,16 +78,9 @@
 	</div>
 	
 	<div class="form-group">
-		<div class="col-sm-4">
-		<label>Anexos <span class="glyphicon glyphicon-question-sign"></span></label>
-		<button id="btn_anexos" name="btn_anexos" class="btn btn-primary btn-xs">Agregar anexos</button>
-		</div>
-	</div>
-	
-	<div class="form-group">
-		<label class="col-sm-2 control-label">Archivo adjunto</label>
-		<div class="col-sm-4">
-			<input type="file" id="anexo" name="anexo" class="filestyle" data-buttonText="Adjuntar" />
+		<label class="col-sm-2 control-label">Anexos <span class="glyphicon glyphicon-question-sign"></span></label>
+		<div class="col-sm-10">
+			<textarea rows="3" id="anexos" name="anexos" class="form-control"></textarea>
 		</div>
 	</div>
 	
