@@ -21,6 +21,6 @@ $data = array(
 		'tipo' => $tipo,
 		'areaAtención' => $areaAtencion,
 );
-
+ 
 Flight::render('template/layout', $data);
 ?>
