@@ -18,6 +18,8 @@ while($row=mysqli_fetch_array($areaAtencion[1])){
 $data = array(
 		'header' => $header,
 		'contenido' => $contenido,
+		'tipo' => $tipo,
+		'areaAtención' => $areaAtencion,
 );
 
 Flight::render('template/layout', $data);
