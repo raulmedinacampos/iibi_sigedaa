@@ -5,7 +5,7 @@ $header['js'][] = 'captura_documentos';
 
 $contenido = 'documentos/captura';
 
-$tipo = seleccionarTodo("*","cTipoDocumental","1 order by asc");
+$tipo = seleccionarTodo("*","cTipoDocumental","1 order by tipo asc");
 /*while($row=mysqli_fetch_array($tipo[1])){
 	echo "<br>value ".$row[0];
 	echo "<br>Text ".$row[1];}
