@@ -4,6 +4,13 @@
 		<div class="col-sm-4">
 			<select id="tipo_documento" name="tipo_documento" class="form-control">
 				<option value="">Seleccione</option>
+				<?php
+				while( $row = mysqli_fetch_array($tipo[1]) ) {
+				?>
+				<option value="<?php echo $row['idTipoDocumental']; ?>"><?php echo utf8_encode($row['tipoDocumental']); ?></option>
+				<?php
+				}
+				?>
 			</select>
 		</div>
 		
@@ -96,6 +103,13 @@
 		<div class="col-sm-4">
 			<select id="atender_por" name="atender_por" class="form-control">
 				<option value="">Seleccione</option>
+				<?php
+				while( $row = mysqli_fetch_array($areaAtencion[1]) ) {
+				?>
+				<option value="<?php echo $row['idArea']; ?>"><?php echo utf8_encode($row['area']); ?></option>
+				<?php
+				}
+				?>
 			</select>
 		</div>
 	</div>
