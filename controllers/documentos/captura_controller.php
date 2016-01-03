@@ -11,7 +11,7 @@ $tipo = seleccionarTodo("*","cTipoDocumental","1 order by tipoDocumental asc");
 	echo "<br>Text ".$row[1];}
 */
 
-$dependencia = seleccionarTodo("*", "cDependencia", 1);
+$dependencia = seleccionarTodo("*", "cDependencia", "1 order by dependencia");
 /*while($row=mysqli_fetch_array($dependencia[1])){
 	echo "<br>value ".$row[0];
 	echo "<br>Text ".$row[1];}
