@@ -27,7 +27,7 @@ $data = array(
 		'header' => $header,
 		'contenido' => $contenido,
 		'tipo' => $tipo,
-		'areaAtención' => $areaAtencion,
+		'areaAtencion' => $areaAtencion,
 		'dependencia' => $dependencia
 );
  
