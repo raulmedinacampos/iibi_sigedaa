@@ -41,7 +41,7 @@ Flight::route('/documentos/captura/', function() {
 	require_once 'controllers/documentos/captura_controller.php';
 });
 
-Flight::route('/documentos/gudardarDoc/', function() {
+Flight::route('/documentos/guardarDoc/', function() {
 	require_once 'controllers/documentos/guardarDoc_controller.php';
 });
 
