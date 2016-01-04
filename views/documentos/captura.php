@@ -14,33 +14,33 @@
 			</select>
 		</div>
 		
-		<label class="col-sm-2 control-label">Asunto</label>
+		<label class="col-sm-2 control-label obligatorio">Asunto</label>
 		<div class="col-sm-4">
 			<input id="asunto" name="asunto" class="form-control" />
 		</div>
 	</div>
 	
 	<div class="form-group">
-		<label class="col-sm-2 control-label">Núm. Oficio / Circular</label>
+		<label class="col-sm-2 control-label obligatorio">Núm. Oficio / Circular</label>
 		<div class="col-sm-2">
 			<input id="num_oficio" name="num_oficio" class="form-control" />
 		</div>
 	</div>
 	
 	<div class="form-group">
-		<label class="col-sm-2 control-label">Dirigido a</label>
+		<label class="col-sm-2 control-label obligatorio">Dirigido a</label>
 		<div class="col-sm-4">
 			<input id="dirigido_a" name="dirigido_a" class="form-control" />
 		</div>
 		
-		<label class="col-sm-2 control-label">Cargo</label>
+		<label class="col-sm-2 control-label obligatorio">Cargo</label>
 		<div class="col-sm-4">
 			<input id="cargo" name="cargo" class="form-control" />
 		</div>
 	</div>
 	
 	<div class="form-group">
-		<label class="col-sm-2 control-label">Remitente</label>
+		<label class="col-sm-2 control-label obligatorio">Remitente</label>
 		<div class="col-sm-4">
 			<input id="remitente" name="remitente" class="form-control" />
 		</div>
