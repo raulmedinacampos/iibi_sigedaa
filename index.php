@@ -37,6 +37,10 @@ Flight::route('/bandejas/documentos-atendidos/', function() {
 /* Fin Bandejas de documentos */
 
 /* Sección Documentos */
+Flight::route('/listado-dependencias/', function() {
+	require_once 'controllers/lista_dependencias_controller.php';
+});
+
 Flight::route('/documentos/captura/', function() {
 	require_once 'controllers/documentos/captura_controller.php';
 });
