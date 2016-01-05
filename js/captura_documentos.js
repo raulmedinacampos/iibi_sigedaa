@@ -1,3 +1,28 @@
+function autocompletar() {
+	$('.typeahead').typeahead({
+		source: function(query, process) {
+			$.getJSON('../listado-dependencias',
+					{'q': query},
+					function(data) {
+						process(data);
+					}
+			);
+		}
+	}); 
+}
+
+function activarOtraInstitucion() {
+	var chk = $("#chk_otra_institucion");
+	
+	chk.click(function() {
+		if( chk.is(":checked") ) {
+			$("#otra_institucion").prop("disabled", false);
+		} else {
+			$("#otra_institucion").prop("disabled", true);
+		}
+	});
+}
+
 function validar() {
 	$("#formSolicitud").validate({
 		onkeyup: false,
@@ -44,6 +69,8 @@ function enviarDatos() {
 }
 
 $(function() {
+	autocompletar();
+	activarOtraInstitucion();
 	validar();
 	enviarDatos();
 })

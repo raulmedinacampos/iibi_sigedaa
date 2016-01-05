@@ -54,7 +54,7 @@
 	<div class="form-group">
 		<label class="col-sm-2 control-label">Dependencia UNAM</label>
 		<div class="col-sm-4">
-			<input id="dependencia_unam" name="dependencia_unam" class="form-control" />
+			<input id="dependencia_unam" name="dependencia_unam" class="form-control typeahead" autocomplete="off" />
 		</div>
 		
 		<div class="checkbox col-sm-2 control-label">
