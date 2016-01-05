@@ -25,6 +25,7 @@ function activarOtraInstitucion() {
 
 function validar() {
 	$("#formSolicitud").validate({
+		errorElement: 'span',
 		onkeyup: false,
 		rules: {
 			tipo_documento: {
@@ -45,6 +46,14 @@ function validar() {
 			remitente: {
 				required: true
 			}
+		},
+		messages: {
+			tipo_documento: "Este campo es obligatorio",
+			asunto: "Este campo es obligatorio",
+			num_oficio: "Este campo es obligatorio",
+			dirigido_a: "Este campo es obligatorio",
+			cargo: "Este campo es obligatorio",
+			remitente: "Este campo es obligatorio"
 		}
 	});
 }
