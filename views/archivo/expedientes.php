@@ -1,4 +1,3 @@
-<h4>Expedientes del área</h4>
 <p>Expedientes del área: Nombre del área<br />
 Total de expedientes en trámite: nn</p>
 <form action="" method="post" id="formExpedientes" name="formExpedientes" class="form-horizontal">

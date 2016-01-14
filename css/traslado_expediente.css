@@ -1,0 +1,7 @@
+.table th:first-child {
+	width: 23%;
+}
+
+.table th:nth-child(2) {
+	width: 20%;
+}

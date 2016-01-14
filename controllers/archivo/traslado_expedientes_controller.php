@@ -1,6 +1,8 @@
 <?php
 session_start();
 
+$header['css'][] = 'traslado_expediente';
+
 $header['js'][] = '';
 
 $contenido = 'archivo/traslado_expedientes';
