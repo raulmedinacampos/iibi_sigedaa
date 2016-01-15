@@ -29,7 +29,6 @@ $maxID=maximo("idDocumento", "documento")+1;
 
 $consecArea = maxEnAnio("consecArea", "fechaAlta", "documento and areaAtencion='".$_SESSION['siglasArea']."'")+1;
 
-
 $folio = "E/".$_SESSION['areaSiglas']."/".$consecArea."/2016";
 /*arreglar el año para que sea el actual*/
 
