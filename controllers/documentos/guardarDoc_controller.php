@@ -9,24 +9,31 @@ $dirigido_a = (isset($_POST['dirigido_a'])) ? addslashes($_POST['dirigido_a']) :
 $num_oficio = (isset($_POST['num_oficio'])) ? addslashes($_POST['num_oficio']) : "";
 $cargo = (isset($_POST['cargo'])) ? addslashes($_POST['cargo']) : "";
 $remitente = (isset($_POST['remitente'])) ? addslashes($_POST['remitente']) : "";
-$cargo_remitente = (isset($_POST['cargo_remitente'])) ? addslashes($_POST['cargo_remitente']) : "";
-$dependencia_unam = (isset($_POST['dependencia_unam'])) ? addslashes($_POST['dependencia_unam']) : "";
-$otra_institucion = (isset($_POST['otra_institucion'])) ? addslashes($_POST['otra_institucion']) : "";
-$entidad_subordinada = (isset($_POST['entidad_subordinada'])) ? addslashes($_POST['entidad_subordinada']) : "";
+$cargoRem = (isset($_POST['cargo_remitente'])) ? addslashes($_POST['cargo_remitente']) : "";
+
+/*si es unam */
+-$dependencia= (isset($_POST['dependencia_unam'])) ? addslashes($_POST['dependencia_unam']) : "";
+-$otra_institucion = (isset($_POST['otra_institucion'])) ? addslashes($_POST['otra_institucion']) : "";
+-$subDep = (isset($_POST['entidad_subordinada'])) ? addslashes($_POST['entidad_subordinada']) : "";
 $ccp = (isset($_POST['ccp'])) ? addslashes($_POST['ccp']) : "";
-$info_relevante = (isset($_POST['informacion_relevante'])) ? addslashes($_POST['informacion_relevante']) : "";
-$anexo = (isset($_POST['anexo'])) ? addslashes($_POST['anexo']) : "";
+-$info_relevante = (isset($_POST['informacion_relevante'])) ? addslashes($_POST['informacion_relevante']) : "";
+-$anexo = (isset($_POST['anexo'])) ? addslashes($_POST['anexo']) : "";
 $num_hojas = (isset($_POST['num_hojas'])) ? addslashes($_POST['num_hojas']) : "";
 $atender_por= (isset($_POST['atender_por'])) ? addslashes($_POST['atender_por']) : "";
-$num_hojas = (isset($_POST['num_hojas'])) ? addslashes($_POST['num_hojas']) : "";
+$no_orginal = (isset($_POST['no_original'])) ? addslashes($_POST['no_original']) : "";
+
+$idUsuarioModif = 1;  
+/*tomar el idUsuario de la session*/
 
 $maxID=maximo("idDocumento", "documento")+1;
 
-$consecArea = maxEnAnio("consecAnual", "fechaAlta", "documento")+1;
-$folio = "E/".$_SESSION['areaSiglas']."/".$consecArea."/".$año;
+$consecArea = maxEnAnio("consecArea", "fechaAlta", "documento and areaAtencion='".$_SESSION['siglasArea']."'")+1;
 
 
-$valores= $maxID.',"'.$folio.'",null,"'.$asunto.'","'.$remitente.'","'.$dirigido_a.'",'.$tipo_documento.',"'.$num_oficio.'",'.$num_hojas.',"'.$info_relevante.'",null,null,null,'.$idUsuario.',curdate(),1';
+$folio = "E/".$_SESSION['areaSiglas']."/".$consecArea."/2016";
+/*arreglar el año para que sea el actual*/
+
+$valores= $maxID.','.$consecArea.',"'.$_SESSION['siglasArea'].'",null,'.$tipo_documento.',"'.$asunto.'","'.$numOficio.'","'.$destinatario.'","'.$cargo.'","'.$remitente.'","'.$cargoRem.'","'.$dependencia.'","'.$subDep.'","'.$ccp.'","'.$info_relevante.'","'.$anexos.'",'.$num_hojas.','.$no_orginal.',null,null,null,null,curdate(),null,1';
 
 $insertar = insertar("documento", $valores);
 if($insertar[0]==1)
