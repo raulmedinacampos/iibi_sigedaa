@@ -11,13 +11,13 @@ $cargo = (isset($_POST['cargo'])) ? addslashes($_POST['cargo']) : "";
 $remitente = (isset($_POST['remitente'])) ? addslashes($_POST['remitente']) : "";
 $cargoRem = (isset($_POST['cargo_remitente'])) ? addslashes($_POST['cargo_remitente']) : "";
 
-/*si es unam */
--$dependencia= (isset($_POST['dependencia_unam'])) ? addslashes($_POST['dependencia_unam']) : "";
--$otra_institucion = (isset($_POST['otra_institucion'])) ? addslashes($_POST['otra_institucion']) : "";
--$subDep = (isset($_POST['entidad_subordinada'])) ? addslashes($_POST['entidad_subordinada']) : "";
+$otra_institucion = (isset($_POST['otra_institucion'])) ? addslashes($_POST['otra_institucion']) : "";
+$dependencia= (isset($_POST['dependencia_unam'])) ? addslashes($_POST['dependencia_unam']) : $otra_institucion;
+
+$subDep = (isset($_POST['entidad_subordinada'])) ? addslashes($_POST['entidad_subordinada']) : "";
 $ccp = (isset($_POST['ccp'])) ? addslashes($_POST['ccp']) : "";
--$info_relevante = (isset($_POST['informacion_relevante'])) ? addslashes($_POST['informacion_relevante']) : "";
--$anexo = (isset($_POST['anexo'])) ? addslashes($_POST['anexo']) : "";
+$info_relevante = (isset($_POST['informacion_relevante'])) ? addslashes($_POST['informacion_relevante']) : "";
+$anexo = (isset($_POST['anexo'])) ? addslashes($_POST['anexo']) : "";
 $num_hojas = (isset($_POST['num_hojas'])) ? addslashes($_POST['num_hojas']) : "";
 $atender_por= (isset($_POST['atender_por'])) ? addslashes($_POST['atender_por']) : "";
 $no_orginal = (isset($_POST['no_original'])) ? addslashes($_POST['no_original']) : "";
