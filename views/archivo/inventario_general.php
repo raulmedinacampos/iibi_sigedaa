@@ -1,4 +1,4 @@
-<h4>Inventario general del (Área propietaria y subáreas)</h4>
+<h4>Inventario general</h4>
 <p>Esta es una lista referencial para saber el número de expedientes contenidos en cada serie documental.<br />
 Contiene los expedientes en trámite (activos) y los expedientes cerrados que aún permanecen en el archivo de trámite por disposición documental.</p>
 

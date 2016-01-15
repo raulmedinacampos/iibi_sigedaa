@@ -21,7 +21,7 @@
 	</div>
 	
 	<div class="form-group">
-		<label class="col-sm-2 control-label obligatorio">Núm. Oficio / Circular</label>
+		<label class="col-sm-2 control-label">Núm. Oficio / Circular</label>
 		<div class="col-sm-2">
 			<input id="num_oficio" name="num_oficio" class="form-control" />
 		</div>
@@ -68,24 +68,24 @@
 	<div class="form-group">
 		<label class="col-sm-2 control-label">Entidad subordinada emisora</label>
 		<div class="col-sm-4">
-			<input id="entidad_subordinada" name="entidad_subordinada" class="form-control" />
+			<input id="entidad_subordinada" name="entidad_subordinada" class="form-control typeahead" autocomplete="off" />
 		</div>
 		
-		<label class="col-sm-2 control-label">C.C.P. <span class="glyphicon glyphicon-question-sign"></span></label>
+		<label class="col-sm-2 control-label">C.C.P. <span class="glyphicon glyphicon-question-sign" data-toggle="tooltip" title="Capturar nombre, apellido y siglas"></span></label>
 		<div class="col-sm-4">
 			<input id="ccp" name="ccp" class="form-control" />
 		</div>
 	</div>
 	
 	<div class="form-group">
-		<label class="col-sm-2 control-label">Información relevante</label>
+		<label class="col-sm-2 control-label obligatorio">Información relevante</label>
 		<div class="col-sm-10">
 			<textarea rows="3" id="informacion_relevante" name="informacion_relevante" class="form-control"></textarea>
 		</div>
 	</div>
 	
 	<div class="form-group">
-		<label class="col-sm-2 control-label">Anexos <span class="glyphicon glyphicon-question-sign"></span></label>
+		<label class="col-sm-2 control-label">Anexos <span class="glyphicon glyphicon-question-sign" data-toggle="tooltip" title="Documentos con información soporte incluídos en el documento que se recibe"></span></label>
 		<div class="col-sm-10">
 			<textarea rows="3" id="anexos" name="anexos" class="form-control"></textarea>
 		</div>
@@ -95,6 +95,10 @@
 		<label class="col-sm-2 control-label">Núm. de hojas incluyendo anexos</label>
 		<div class="col-sm-1">
 			<input id="num_hojas" name="num_hojas" class="form-control" />
+		</div>
+		
+		<div class="checkbox col-sm-2 col-sm-offset-3 control-label">
+			<label><input type="checkbox" id="chk_no_original" name="chk_no_original" value="1" /> No original</label>
 		</div>
 	</div>
 	

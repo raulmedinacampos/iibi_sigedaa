@@ -1,3 +1,7 @@
+function inicializar() {
+	$('[data-toggle="tooltip"]').tooltip();
+}
+
 function autocompletar() {
 	$('.typeahead').typeahead({
 		source: function(query, process) {
@@ -16,8 +20,10 @@ function activarOtraInstitucion() {
 	
 	chk.click(function() {
 		if( chk.is(":checked") ) {
+			$("#dependencia_unam").prop("disabled", true);
 			$("#otra_institucion").prop("disabled", false);
 		} else {
+			$("#dependencia_unam").prop("disabled", false);
 			$("#otra_institucion").prop("disabled", true);
 		}
 	});
@@ -34,9 +40,6 @@ function validar() {
 			asunto: {
 				required: true
 			},
-			num_oficio: {
-				required: true
-			},
 			dirigido_a: {
 				required: true
 			},
@@ -45,15 +48,26 @@ function validar() {
 			},
 			remitente: {
 				required: true
+			},
+			dependencia_unam: {
+				required: "#chk_otra_institucion:unchecked"
+			},
+			otra_institucion: {
+				required: "#chk_otra_institucion:checked"
+			},
+			informacion_relevante: {
+				required: true
 			}
 		},
 		messages: {
 			tipo_documento: "Este campo es obligatorio",
 			asunto: "Este campo es obligatorio",
-			num_oficio: "Este campo es obligatorio",
 			dirigido_a: "Este campo es obligatorio",
 			cargo: "Este campo es obligatorio",
-			remitente: "Este campo es obligatorio"
+			remitente: "Este campo es obligatorio",
+			dependencia_unam: "Este campo es obligatorio",
+			otra_institucion: "Este campo es obligatorio",
+			informacion_relevante: "Este campo es obligatorio"
 		}
 	});
 }
@@ -78,6 +92,7 @@ function enviarDatos() {
 }
 
 $(function() {
+	inicializar();
 	autocompletar();
 	activarOtraInstitucion();
 	validar();

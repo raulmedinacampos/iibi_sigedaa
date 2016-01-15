@@ -41,3 +41,7 @@
 		<td><textarea rows="1" class="form-control"></textarea></td>
 	</tr>
 </table>
+
+<div class="text-right">
+	<button class="btn btn-primary">Guardar cambios</button>
+</div>
