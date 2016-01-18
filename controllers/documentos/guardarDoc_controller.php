@@ -26,7 +26,7 @@ $idUsuarioModif = 1;
 /*tomar el idUsuario de la session*/
 
 $_SESSION['areaSiglas'] = "SAD";
-
+  
 $maxID=maximo("idDocumento", "documento")+1;
 
 $consecArea = maxEnAnio("consecArea", "fechaAlta", "documento and areaAtencion='".$_SESSION['siglasArea']."'")+1;
