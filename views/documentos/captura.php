@@ -14,16 +14,16 @@
 			</select>
 		</div>
 		
-		<label class="col-sm-2 control-label obligatorio">Asunto</label>
-		<div class="col-sm-4">
-			<input id="asunto" name="asunto" class="form-control" />
+		<label class="col-sm-2 control-label">Núm. Oficio / Circular</label>
+		<div class="col-sm-2">
+			<input id="num_oficio" name="num_oficio" class="form-control" />
 		</div>
 	</div>
 	
 	<div class="form-group">
-		<label class="col-sm-2 control-label">Núm. Oficio / Circular</label>
-		<div class="col-sm-2">
-			<input id="num_oficio" name="num_oficio" class="form-control" />
+		<label class="col-sm-2 control-label obligatorio">Asunto</label>
+		<div class="col-sm-10">
+			<input id="asunto" name="asunto" class="form-control" />
 		</div>
 	</div>
 	
@@ -92,18 +92,18 @@
 	</div>
 	
 	<div class="form-group">
-		<label class="col-sm-2 control-label">Núm. de hojas incluyendo anexos</label>
+		<label class="col-sm-2 control-label obligatorio">Núm. de hojas incluyendo anexos</label>
 		<div class="col-sm-1">
 			<input id="num_hojas" name="num_hojas" class="form-control" />
 		</div>
 		
 		<div class="checkbox col-sm-2 col-sm-offset-3 control-label">
-			<label><input type="checkbox" id="chk_no_original" name="chk_no_original" value="1" /> No original</label>
+			<label><input type="checkbox" id="chk_no_original" name="chk_no_original" value="1" checked="checked" /> No original</label>
 		</div>
 	</div>
 	
 	<div class="form-group">
-		<label class="col-sm-2 control-label">Para atender por</label>
+		<label class="col-sm-2 control-label obligatorio">Para atender por</label>
 		<div class="col-sm-4">
 			<select id="atender_por" name="atender_por" class="form-control">
 				<option value="">Seleccione</option>

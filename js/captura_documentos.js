@@ -52,10 +52,13 @@ function validar() {
 			dependencia_unam: {
 				required: "#chk_otra_institucion:unchecked"
 			},
-			otra_institucion: {
-				required: "#chk_otra_institucion:checked"
-			},
 			informacion_relevante: {
+				required: true
+			},
+			num_hojas: {
+				required: true
+			},
+			atender_por: {
 				required: true
 			}
 		},
@@ -66,8 +69,9 @@ function validar() {
 			cargo: "Este campo es obligatorio",
 			remitente: "Este campo es obligatorio",
 			dependencia_unam: "Este campo es obligatorio",
-			otra_institucion: "Este campo es obligatorio",
-			informacion_relevante: "Este campo es obligatorio"
+			informacion_relevante: "Este campo es obligatorio",
+			num_hojas: "Este campo es obligatorio",
+			atender_por: "Este campo es obligatorio"
 		}
 	});
 }
