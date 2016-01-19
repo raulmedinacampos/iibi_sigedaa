@@ -51,6 +51,18 @@ function maxEnAnio($columna,$colFecha,$tabla){
 	return $seleccion["maxEnAnio"];}
 
 
+/*Funcion maxEnAnioCond($columna,$colFecha,$tabla,$condicion)
+	
+- Compara el año actual con el de la columna $colFecha
+y obtiene el maximo consecutivo en el año actual con una condici�n dada*/
+	
+	
+	
+	function maxEnAnioCond($columna,$colFecha,$tabla,$condicion){
+		$seleccion=seleccionar("max(".$columna.") as maxEnAnio",$tabla,"YEAR(".$colFecha.") = YEAR( NOW()) and ".$condicion." );
+		return $seleccion["maxEnAnio"];}
+	
+	
 /*Funcion contar ($columna, $tabla)
 
 - Cuenta el número de columnas de la $tabla.
