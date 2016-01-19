@@ -29,7 +29,7 @@ $_SESSION['siglasArea'] = "SAD";
   
 $maxID=maximo("idDocumento", "documento")+1;
 
-$consecArea = maxEnAnio("consecArea", "fechaAlta", "documento and areaAtencion='".$_SESSION['siglasArea']."'")+1;
+$consecArea = maxEnAnioCond("consecArea", "fechaAlta", "documento","areaAtencion='".$_SESSION['siglasArea']."'")+1;
 
 
 $folio = "E/".$_SESSION['areaSiglas']."/".$consecArea."/2016";
