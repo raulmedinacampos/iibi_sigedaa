@@ -58,9 +58,9 @@ y obtiene el maximo consecutivo en el aÃ±o actual con una condición dada*/
 	
 	
 	
-	function maxEnAnioCond($columna,$colFecha,$tabla,$condicion){
-		$seleccion=seleccionar("max(".$columna.") as maxEnAnio",$tabla,"YEAR(".$colFecha.") = YEAR( NOW()) and ".$condicion." );
-		return $seleccion["maxEnAnio"];}
+function maxEnAnioCond($columna,$colFecha,$tabla,$condicion){
+	$seleccion=seleccionar("max(".$columna.") as maxEnAnio",$tabla,"YEAR(".$colFecha.") = YEAR( NOW()) and ".$condicion);
+	return $seleccion["maxEnAnio"];}
 	
 	
 /*Funcion contar ($columna, $tabla)
