@@ -29,12 +29,13 @@ $_SESSION['areaSiglas'] = "SAD";
   
 $maxID=maximo("idDocumento", "documento")+1;
 
-$consecArea = maxEnAnio("consecArea", "fechaAlta", "documento and areaAtencion='".$_SESSION['siglasArea']."'")+1;
+$consecArea = maxEnAnio("consecArea", "fechaAlta", "documento and areaAtencion='".$_SESSION['areaSiglas']."'")+1;
+
 
 $folio = "E/".$_SESSION['areaSiglas']."/".$consecArea."/2016";
 /*arreglar el año para que sea el actual*/
 
-$valores= $maxID.','.$consecArea.',"'.$_SESSION['siglasArea'].'",null,'.$tipo_documento.',"'.$asunto.'","'.$numOficio.'","'.$destinatario.'","'.$cargo.'","'.$remitente.'","'.$cargoRem.'","'.$dependencia.'","'.$subDep.'","'.$ccp.'","'.$info_relevante.'","'.$anexos.'",'.$num_hojas.','.$no_orginal.',null,null,null,null,curdate(),null,1';
+$valores= $maxID.','.$consecArea.',"'.$_SESSION['areaSiglas'].'",null,'.$tipo_documento.',"'.$asunto.'","'.$numOficio.'","'.$destinatario.'","'.$cargo.'","'.$remitente.'","'.$cargoRem.'","'.$dependencia.'","'.$subDep.'","'.$ccp.'","'.$info_relevante.'","'.$anexos.'",'.$num_hojas.','.$no_orginal.',null,null,null,null,curdate(),null,1';
 
 $insertar = insertar("documento", $valores);
 if($insertar[0]==1)
