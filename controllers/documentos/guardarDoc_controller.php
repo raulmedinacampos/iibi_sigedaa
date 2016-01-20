@@ -1,6 +1,4 @@
 <?php
-
-/*Todos los nuevos controladores deben declararse en index.php (línea 44)*/
 session_start();
 
 $tipo_documento = (isset($_POST['tipo_documento'])) ? addslashes($_POST['tipo_documento']) : "";
@@ -20,13 +18,13 @@ $info_relevante = (isset($_POST['informacion_relevante'])) ? addslashes($_POST['
 $anexos = (isset($_POST['anexo'])) ? addslashes($_POST['anexo']) : "";
 $num_hojas = (isset($_POST['num_hojas'])) ? addslashes($_POST['num_hojas']) : "";
 $atender_por= (isset($_POST['atender_por'])) ? addslashes($_POST['atender_por']) : "";
-$no_orginal = (isset($_POST['no_original'])) ? addslashes($_POST['no_original']) : "";
+$no_orginal = (isset($_POST['chk_no_original'])) ? 1 : 0;
 
-$idUsuAlta = 1;  
-/*tomar el idUsuario de la session*/
+$idUsuAlta = $_SESSION['idUsuario']; 
 
 $_SESSION['siglasArea'] = "SAD";
-  
+/*cambiar para que sea el area del usuario alta*/
+
 $maxID=maximo("idDocumento", "documento")+1;
 
 $consecArea = maxEnAnioCond("consecArea", "fechaAlta", "documento","areaAtencion='".$_SESSION['siglasArea']."'")+1;
