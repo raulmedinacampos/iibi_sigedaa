@@ -22,19 +22,16 @@ $no_orginal = (isset($_POST['chk_no_original'])) ? 1 : 0;
 
 $idUsuAlta = $_SESSION['idUsuario']; 
 
-$_SESSION['siglasArea'] = "SAD";
-/*cambiar para que sea el area del usuario alta*/
+$_SESSION['siglasArea'] = $_SESSION['siglasArea'];
 
 $maxID=maximo("idDocumento", "documento")+1;
 
 $consecArea = maxEnAnioCond("consecArea", "fechaAlta", "documento","areaAtencion='".$_SESSION['siglasArea']."'")+1;
 
-
-$folio = "E/".$_SESSION['areaSiglas']."/".$consecArea."/2016";
-/*arreglar el año para que sea el actual*/
+$folio = "E/".$_SESSION['areaSiglas']."/".$consecArea."/".date('Y');
 
 $valores= $maxID.','.$consecArea.',"'.$atender_por.'",null,'.$tipo_documento.',"'.$asunto.'","'.$numOficio.'","'.$destinatario.'","'.$cargoDes.'","'.$remitente.'","'.$cargoRem.'","'.$dependencia.'","'.$subDep.'","'.$ccp.'","'.$info_relevante.'","'.$anexos.'",'.$num_hojas.','.$no_orginal.',null,null,null,'.$idUsuAlta.',null,curdate(),null,1';
-
+ 
 $insertar = insertar("documento", $valores);
 if($insertar[0]==1)
 	echo "El alert con folio y demás";
