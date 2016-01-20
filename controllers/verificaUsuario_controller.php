@@ -11,11 +11,12 @@ if ( is_array($usuario) && $usuario[0] != null ) {
 	$_SESSION['tipoUsuario'] = $usuario['tipoUsuario'];
 	$_SESSION['idUsuario']= $usuario['idUsuario'];
 	$_SESSION['idEmpleado']=$usuario['idEmpleado'];
-	
+
 	$idArea = seleccionarSinMsj("idArea", "puesto","estatus=1 and idEmpleado=".$usuario['idEmpleado']);
+	$_SESSION['idArea']= $idArea['idArea'];
 	
 	$siglas= seleccionarSinMsj("siglas,areaPadre", "cArea","idArea=".$idArea['idArea']);
-	$_SESSION['areaSiglas'] = $siglas['siglas'];
+	$_SESSION['siglasArea'] = $siglas['siglas'];
 	$_SESSION['idAreaPadre'] =$siglas['areaPadre'];
 		
 	$_SESSION['areaPadre'] = seleccionarSinMsj("siglas", "cArea", "idArea=".$siglas['areaPadre']);
