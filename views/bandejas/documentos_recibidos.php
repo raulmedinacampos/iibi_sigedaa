@@ -8,7 +8,7 @@ if ( mysqli_num_rows($documento[1]) > 0 ) {
 ?>
 	<tr>
 		<th>Folio</th>
-		<th>Descripción</th>
+		<th>Tipo de documento</th>
 		<th>Asunto</th>
 		<th>Fecha</th>
 		<th>Procedencia</th>
