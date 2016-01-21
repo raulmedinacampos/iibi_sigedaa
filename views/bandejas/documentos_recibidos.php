@@ -3,10 +3,13 @@
 	turnados.</p>
 
 <table class="table table-striped table-condensed">
+<?php
+if ( mysqli_num_rows($documento[1]) > 0 ) {
+?>
 	<tr>
 		<th>Folio</th>
-		<th>Asunto</th>
 		<th>Descripción</th>
+		<th>Asunto</th>
 		<th>Fecha</th>
 		<th>Procedencia</th>
 		<th>Acción</th>
@@ -44,6 +47,27 @@
 		<td>---</td>
 		<td><span class="btn btn-default btn-sm digital">Adjuntar digital</span></td>
 	</tr>
+	<?php
+	while ( $row = mysqli_fetch_assoc($documento[1]) ) {
+	?>
+	<tr>
+		<td><a href="#"><?php echo $row['folio']; ?></a></td>
+		<td><?php echo $row['tipoDocumental']; ?></td>
+		<td><?php echo $row['asunto']; ?></td>
+		<td><?php echo $row['fechaAlta']; ?></td>
+		<td><?php echo $row['area']; ?></td>
+		<td><span class="btn btn-default btn-sm digital">Adjuntar digital</span></td>
+	</tr>
+	<?php
+	}
+} else {
+?>
+	<tr>
+		<td>No hay documentos disponibles</td>
+	</tr>
+<?php
+}
+?>
 </table>
 
 <!-- Ventana modal -->

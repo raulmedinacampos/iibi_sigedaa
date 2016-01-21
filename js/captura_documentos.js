@@ -81,15 +81,17 @@ function enviarDatos() {
 		e.preventDefault();
 		
 		if( $("#formSolicitud").valid() ) {
-			$.post('guardarDoc', $("#formSolicitud").serialize(), function(data) {});
-			$(".modal-dialog").addClass("modal-sm");
-			$(".modal-title").html('Recepción de documentos - Información para sello');
-			$(".modal-body").html('<p>Número de folio: E / ÁREA / 1234 / 2015</p><p>Recibió: ABC</p><p>Fecha de recepción: dd/mm/aaaa</p><p>Hora: hh:mm</p>');
-			$(".modal-footer .btn-default").css("display", "none");
-			$("#myModal").modal('show');
-			
-			$(".modal-footer .btn-primary").click(function() {
-				$("#myModal").modal('hide');
+			$.post('guardarDoc', $("#formSolicitud").serialize(), function(data) {
+				$(".modal-dialog").addClass("modal-sm");
+				$(".modal-title").html('Recepción de documentos - Información para sello');
+				$(".modal-body").html(data);
+				$(".modal-footer .btn-default").css("display", "none");
+				$("#myModal").modal('show');
+				
+				$(".modal-footer .btn-primary").click(function() {
+					$("#myModal").modal('hide');
+					window.location = "../bandejas/documentos-recibidos";
+				});
 			});
 		}
 	})

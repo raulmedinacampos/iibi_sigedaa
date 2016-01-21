@@ -34,11 +34,11 @@ $valores= $maxID.','.$consecArea.',"'.$atender_por.'",null,"'.$folio.'",'.$tipo_
  
 $insertar = insertar("documento", $valores);
 if($insertar[0]==1){
-	echo "<p>Número de folio ".$folio."</p>";
+	echo "<p>NÃºmero de folio ".$folio."</p>";
 	echo "<p>Recibido</p>". $_SESSION['iniciales'];
-	echo "<p>Fecha</p>".date(d)."/".date(m)."/".date(y);
-	echo "<p>Hora</p>".date(H).":".date(i);}
+	echo "<p>Fecha</p>".date('d/m/Y');
+	echo "<p>Hora</p>".date('H:i');}
 else 
-	echo "Ocurió un problema, favor de comunicarse con el adminsitrador.";
+	echo "OcuriÃ³ un problema, favor de comunicarse con el adminsitrador.";
 
 ?>
