@@ -7,7 +7,7 @@
 				<?php
 				while( $row = mysqli_fetch_array($tipo[1]) ) {
 				?>
-				<option value="<?php echo $row['idTipoDocumental']; ?>"><?php echo utf8_encode($row['tipoDocumental']); ?></option>
+				<option value="<?php echo $row['idTipoDocumental']; ?>"><?php echo $row['tipoDocumental']; ?></option>
 				<?php
 				}
 				?>
