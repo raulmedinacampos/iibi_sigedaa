@@ -19,9 +19,12 @@ if ( is_array($usuario) && $usuario[0] != null ) {
 	$_SESSION['siglasArea'] = $siglas['siglas'];
 	$_SESSION['idAreaPadre'] =$siglas['areaPadre'];
 		
-	$_SESSION['areaPadre'] = seleccionarSinMsj("siglas", "cArea", "idArea=".$siglas['areaPadre']);
+	$siglasPadre = seleccionarSinMsj("siglas", "cArea", "idArea=".$_SESSION['idAreaPadre']);
+	$_SESSION['areaPadre'] = $siglasPadre['siglas'];
 	
-		
+	$iniciales=seleccionar("iniciales", "empleado", "estatus=1 and idEmpleado=".$_SESSION['idEmpleado']);
+	echo " iniciales".$_SESSION['iniciales'] = $iniciales['iniciales'];
+	
 	if ( $_SESSION['tipoUsuario'] == 1 ) {
 		Flight::redirect('bandejas/expedientes');
 	} else {
