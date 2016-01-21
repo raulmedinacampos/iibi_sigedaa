@@ -8,11 +8,11 @@ $contenido = 'bandejas/documentos_recibidos';
 $tablas = "documento,cTipoDocumental,empleado,usuario";
 
 $condicion = 	"cTipoDocumental.idTipoDocumental = documento.idTipoDocumental and
-				 usuario.idUusario = empleado.idUsuario and
+				 usuario.idUsuario = empleado.idUsuario and
 				 idUsuarioModif = usuario.idUsuario
 				 order by consecAnual asc";
 
-$documento = seleccionarTodo("consecAnual,tipoDocumental,asunto,fechaAlta,iniciales",$tablas,$condicion);
+$documento = seleccionarTodo("folio,tipoDocumental,asunto,documento.fechaAlta,iniciales",$tablas,$condicion);
 
 
 $data = array(

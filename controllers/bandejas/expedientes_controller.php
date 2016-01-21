@@ -3,7 +3,7 @@ session_start();
 
 $contenido = 'bandejas/expedientes';
 
-$expediente = seleccionarTodo("folio,descripcion,fechaCreacion","expediente","siglasArea='".$_SESSION['areaSiglas']."' order by fechaCreacion asc");
+$expediente = seleccionarTodo("folio,descripcion,fechaCreacion","expediente","siglasArea='".$_SESSION['siglasArea']."' order by fechaCreacion asc");
 
 
 $data = array(
