@@ -5,14 +5,13 @@ $header['js'][] = 'documentos_recibidos';
 
 $contenido = 'bandejas/documentos_recibidos';
 
-$tablas = "documento,cTipoDocumental,empleado,usuario";
+$tablas = "documento,cTipoDocumental,cArea";
 
 $condicion = 	"cTipoDocumental.idTipoDocumental = documento.idTipoDocumental and
-				 usuario.idUsuario = empleado.idUsuario and
-				 idUsuarioModif = usuario.idUsuario
-				 order by consecAnual asc";
+				 areaAtencion = idArea
+				 order by consecArea asc";
 
-$documento = seleccionarTodo("folio,tipoDocumental,asunto,documento.fechaAlta,iniciales",$tablas,$condicion);
+$documento = seleccionarTodo("folio,tipoDocumental,asunto,documento.fechaAlta,area",$tablas,$condicion);
 
 
 $data = array(
