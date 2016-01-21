@@ -28,14 +28,17 @@ $maxID=maximo("idDocumento", "documento")+1;
 
 $consecArea = maxEnAnioCond("consecArea", "fechaAlta", "documento","areaAtencion='".$_SESSION['siglasArea']."'")+1;
 
-$folio = "E/".$_SESSION['areaSiglas']."/".$consecArea."/".date('Y');
+$folio = "E/".$_SESSION['siglasArea']."/".$consecArea."/".date('Y');
 
-$valores= $maxID.','.$consecArea.',"'.$atender_por.'",null,'.$tipo_documento.',"'.$asunto.'","'.$numOficio.'","'.$destinatario.'","'.$cargoDes.'","'.$remitente.'","'.$cargoRem.'","'.$dependencia.'","'.$subDep.'","'.$ccp.'","'.$info_relevante.'","'.$anexos.'",'.$num_hojas.','.$no_orginal.',null,null,null,'.$idUsuAlta.',null,curdate(),null,1';
+$valores= $maxID.','.$consecArea.',"'.$atender_por.'",null,"'.$folio.'",'.$tipo_documento.',"'.$asunto.'","'.$numOficio.'","'.$destinatario.'","'.$cargoDes.'","'.$remitente.'","'.$cargoRem.'","'.$dependencia.'","'.$subDep.'","'.$ccp.'","'.$info_relevante.'","'.$anexos.'",'.$num_hojas.','.$no_orginal.',null,null,null,'.$idUsuAlta.',null,now(),null,1';
  
 $insertar = insertar("documento", $valores);
-if($insertar[0]==1)
-	echo "El alert con folio y demás";
+if($insertar[0]==1){
+	echo "<p>Número de folio ".$folio."</p>";
+	echo "<p>Recibido</p>". $_SESSION['iniciales'];
+	echo "<p>Fecha</p>".date(d)."/".date(m)."/".date(y);
+	echo "<p>Hora</p>".date(H).":".date(i);}
 else 
-	echo "Alert con mensaje de error, vuelva a intentar";
+	echo "Ocurió un problema, favor de comunicarse con el adminsitrador.";
 
 ?>
