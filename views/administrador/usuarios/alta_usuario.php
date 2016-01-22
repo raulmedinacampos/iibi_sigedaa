@@ -1,73 +1,38 @@
 <h4>Para ser usuario del sistema es necesario que la persona esté registrada como trabajador de la dependencia</h4>
 
-<?php
-$attr = array (
-		'id' => 'formUsuario',
-		'name' => 'formUsuario',
-		'class' => 'form-horizontal' 
-);
 
-echo form_open(base_url(), $attr);
-?>
-
-<div class="form-group">
-	<div class="col-sm-8">
-		<?php
-		echo form_label('Escriba el nombre del trabajador que será dado de alta como usuario:');
-		$attr = array (
-				'id' => 'grado',
-				'name' => 'grado',
-				'class' => 'form-control typeahead'
-		);
-		echo form_input($attr);
-		?>
+<form method="post" id="formUsuario" name="formUsuario" class="form-horizontal" action="">
+	<div class="form-group">
+		<div class="col-sm-6">
+			<label>Escriba el nombre del trabajador que será dado de alta como usuario:</label>
+			<input id="trabajador" name="trabajador" class="form-control typeahead" />
+		</div>
 	</div>
-</div>
-
-<div class="form-group">
-	<div class="col-sm-3">
-		<?php
-		echo form_label('Usuario');
-		$attr = array (
-				'id' => 'area_solicitante',
-				'name' => 'area_solicitante',
-				'class' => 'form-control' 
-		);
-		echo form_input($attr);
-		?>
+	
+	<div class="form-group">
+		<div class="col-sm-3">
+			<label>Usuario</label>
+			<input id="usuario" name="usuario" class="form-control" />
+		</div>
 	</div>
-</div>
-
-<div class="form-group">
-	<div class="col-sm-3">
-		<?php
-		echo form_label('Grupo');
-		$opt = array(
-				'' => 'Seleccione'
-		);
-		echo form_dropdown('grupo', $opt, '', 'id="grupo" class="form-control"'); ?>
+		
+	<div class="form-group">
+		<div class="col-sm-3">
+			<label>Grupo</label>
+			<select id="grupo" name="grupo" class="form-control">
+				<option value="">Seleccione</option>
+			</select>
+		</div>
 	</div>
-</div>
-
-<p class="nota">La contraseña se generará automáticamente y se enviará al correo institucional del usuario junto con su nombre de usuario.</p>
-
-<?php
-$attr = array (
-		'id' => 'btnGuardar',
-		'name' => 'btnGuardar',
-		'class' => 'btn btn-primary',
-		'content' => 'Guardar nuevo usuario'
-);
-?>
-<div class="row">
-	<div class="col-sm-12">
-		<div class=""><?php echo form_button($attr); ?></div>
+	
+	<p class="nota">La contraseña se generará automáticamente y se enviará al correo institucional del usuario junto con su nombre de usuario.</p>
+	
+	<div class="form-group">
+		<div class="col-sm-12">
+			<button id="btnGuardar" name="btnGuardar" class="btn btn-primary">Guardar nuevo usuario</button>
+		</div>
 	</div>
-</div>
-
-<?php
-echo form_close();
-?>
+</form>
 
 <!-- Ventana modal para avisos -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
