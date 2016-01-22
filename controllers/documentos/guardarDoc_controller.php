@@ -15,7 +15,7 @@ $dependencia= (isset($_POST['dependencia_unam'])) ? addslashes($_POST['dependenc
 $subDep = (isset($_POST['entidad_subordinada'])) ? addslashes($_POST['entidad_subordinada']) : "";
 $ccp = (isset($_POST['ccp'])) ? addslashes($_POST['ccp']) : "";
 $info_relevante = (isset($_POST['informacion_relevante'])) ? addslashes($_POST['informacion_relevante']) : "";
-$anexos = (isset($_POST['anexo'])) ? addslashes($_POST['anexo']) : "";
+$anexos = (isset($_POST['anexos'])) ? addslashes($_POST['anexos']) : "";
 $num_hojas = (isset($_POST['num_hojas'])) ? addslashes($_POST['num_hojas']) : "";
 $atender_por= (isset($_POST['atender_por'])) ? addslashes($_POST['atender_por']) : "";
 $no_orginal = (isset($_POST['chk_no_original'])) ? 1 : 0;
@@ -26,11 +26,11 @@ $_SESSION['siglasArea'] = $_SESSION['siglasArea'];
 
 $maxID=maximo("idDocumento", "documento")+1;
 
-$consecArea = maxEnAnioCond("consecArea", "fechaAlta", "documento","areaAtencion='".$_SESSION['siglasArea']."'")+1;
+$consecArea = maxEnAnioCond("consecArea", "fechaAlta", "documento","idAreaPAlta='".$_SESSION['idAreaPadre']."'")+1;
 
 $folio = "E/".$_SESSION['siglasArea']."/".$consecArea."/".date('Y');
 
-$valores= $maxID.','.$consecArea.',"'.$atender_por.'",null,"'.$folio.'",'.$tipo_documento.',"'.$asunto.'","'.$numOficio.'","'.$destinatario.'","'.$cargoDes.'","'.$remitente.'","'.$cargoRem.'","'.$dependencia.'","'.$subDep.'","'.$ccp.'","'.$info_relevante.'","'.$anexos.'",'.$num_hojas.','.$no_orginal.',null,null,null,'.$idUsuAlta.',null,now(),null,1';
+$valores= $maxID.','.$consecArea.',"'.$atender_por.'",null,"'.$folio.'",'.$tipo_documento.',"'.$asunto.'","'.$numOficio.'","'.$destinatario.'","'.$cargoDes.'","'.$remitente.'","'.$cargoRem.'","'.$dependencia.'","'.$subDep.'","'.$ccp.'","'.$info_relevante.'","'.$anexos.'",'.$num_hojas.','.$no_orginal.',null,null,null,'.$_SESSION['idAreaPadre'].','.$idUsuAlta.',null,now(),null,1';
  
 $insertar = insertar("documento", $valores);
 if($insertar[0]==1){
