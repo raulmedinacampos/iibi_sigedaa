@@ -7,7 +7,7 @@
 				<?php
 				while( $row = mysqli_fetch_array($tipo[1]) ) {
 				?>
-				<option value="<?php echo $row['idTipoDocumental']; ?>"><?php echo utf8_encode($row['tipoDocumental']); ?></option>
+				<option value="<?php echo $row['idTipoDocumental']; ?>"><?php echo $row['tipoDocumental']; ?></option>
 				<?php
 				}
 				?>
@@ -110,7 +110,7 @@
 				<?php
 				while( $row = mysqli_fetch_array($areaAtencion[1]) ) {
 				?>
-				<option value="<?php echo $row['idArea']; ?>"><?php echo utf8_encode($row['area']); ?></option>
+				<option value="<?php echo $row['idArea']; ?>"><?php echo $row['area']; ?></option>
 				<?php
 				}
 				?>
