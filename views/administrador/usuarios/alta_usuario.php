@@ -5,14 +5,15 @@
 	<div class="form-group">
 		<div class="col-sm-6">
 			<label>Escriba el nombre del trabajador que será dado de alta como usuario:</label>
-			<input id="trabajador" name="trabajador" class="form-control typeahead" />
+			<input type="hidden" id="hdn_id" name="hdn_id" />
+			<input type="text" id="trabajador" name="trabajador" class="form-control typeahead" />
 		</div>
 	</div>
 	
 	<div class="form-group">
 		<div class="col-sm-3">
 			<label>Usuario</label>
-			<input id="usuario" name="usuario" class="form-control" />
+			<input type="text" id="usuario" name="usuario" class="form-control" />
 		</div>
 	</div>
 		
