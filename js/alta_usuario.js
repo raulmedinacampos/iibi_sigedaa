@@ -24,6 +24,21 @@ function autocompletar() {
 	}); 
 }
 
+function guardar() {
+	$("#btnGuardar").click(function(e) {
+		e.preventDefault();
+		
+		$.post(
+				'guardar-usuario',
+				$("#formUsuario").serialize(),
+				function(data) {
+					
+				}
+		);
+	});
+}
+
 $(function() {
 	autocompletar();
+	guardar();
 });

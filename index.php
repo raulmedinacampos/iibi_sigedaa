@@ -156,6 +156,10 @@ Flight::route('/administrador/guardar-empleado', function() {
 Flight::route('/administrador/alta-de-usuario', function() {
 	require_once 'controllers/administrador/usuario_controller.php';
 });
+
+Flight::route('/administrador/guardar-usuario', function() {
+	require_once 'controllers/administrador/guardarUsuario_controller.php';
+});
 /* Fin Administrador*/
 
 Flight::route('/salir/', function() {
