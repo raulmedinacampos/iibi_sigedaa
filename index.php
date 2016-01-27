@@ -141,8 +141,16 @@ Flight::route('/archivo/traslado-de-expedientes', function() {
 /* Fin Archivo */
 
 /* Sección Administrador */
+Flight::route('/listado-empleados/', function() {
+	require_once 'controllers/lista_empleados_controller.php';
+});
+	
 Flight::route('/administrador/alta-de-empleado', function() {
 	require_once 'controllers/administrador/empleado_controller.php';
+});
+
+Flight::route('/administrador/guardar-empleado', function() {
+	require_once 'controllers/administrador/guardarEmpleado_controller.php';
 });
 
 Flight::route('/administrador/alta-de-usuario', function() {
