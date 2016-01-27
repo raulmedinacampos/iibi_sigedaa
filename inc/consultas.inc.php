@@ -320,7 +320,7 @@ function iUsuario($valsEmpleado,$valsPuesto,$valsUsuario){
 	$resultado=mysqli_query($GLOBALS['conexion'],$sql);
 	
 	if ($resultado) {
-		echo $sql = "COMMIT";
+		echo $sql = "COMMIT"; 
 		$resultado=mysqli_query($GLOBALS['conexion'],$sql);}
 	else{
 		echo $sql = "ROLLBACK;";
