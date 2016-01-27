@@ -32,8 +32,7 @@ $valores =	$grado.', "'.
 			$correoInst.'","'.
 			$fechaEntrada.'","'.
 			$rfc.'","'.
-			$curp.'",'.
-			'1';
+			$curp.'"';
 
 $insertar = insertar("empleado", $valores);
 
