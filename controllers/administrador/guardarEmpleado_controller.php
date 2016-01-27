@@ -39,5 +39,5 @@ $insertar = insertar("empleado", $valores);
 if ( $insertar[0] == 1 ) {
 } else {
 	echo "Ocurió un problema, favor de comunicarse con el adminsitrador.";
-} 
+}
 ?>
