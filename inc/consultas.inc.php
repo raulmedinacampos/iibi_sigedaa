@@ -315,10 +315,7 @@ function iUsuario($valsEmpleado,$valsPuesto,$valsUsuario){
 	
 	$sql = "INSERT INTO puesto (idEmpleado,puesto,idArea,fechaInicio,estatus) values (".$newEmp.",".$valsPuesto.",1)";
 	$resultado=mysqli_query($GLOBALS['conexion'],$sql);
-	
-	$sql = "INSERT INTO usuario (idEmpleado,tipoUsuario,usuario,contrasenia,idMenu,fechaAlta,estatus) values (".$newEmp.",".$valsUsuario.",now(),1)";
-	$resultado=mysqli_query($GLOBALS['conexion'],$sql);
-	
+		
 	if ($resultado) {
 		echo $sql = "COMMIT";
 		$resultado=mysqli_query($GLOBALS['conexion'],$sql);}
