@@ -5,15 +5,22 @@ $header['js'][] = 'documentos_recibidos';
 
 $contenido = 'bandejas/documentos_recibidos';
 
-$tablas = "documento,cTipoDocumental,cArea";
+$columnas = "folio,tipoDocumental,asunto,DATE_FORMAT(documento.fechaAlta,'%d/%m/%Y') as fechaAlta,area, idArchivoDigital,estatus";
+$tablas = "documento,cTipoDocumental,cArea,usuario,puesto";
 
-$condicion = 	"cTipoDocumental.idTipoDocumental = documento.idTipoDocumental and
-				 areaAtencion = idArea
-				 order by consecArea asc";
+$condicion = 	"cTipoDocumental.idTipoDocumental = documento.idTipoDocumental AND
+				usuario.idEmpleado = puesto.idEmpleado AND
+				cArea.idArea = puesto.idArea AND
+				usuario.idUsuario = documento.idUsuAlta 
+ 			    order by consecArea asc";
 
-$documento = seleccionarTodo("folio,tipoDocumental,asunto,documento.fechaAlta,area",$tablas,$condicion);
 
+DATE_FORMAT(fechaSolicitud,'%d/%m/%Y') as fecha
 
+$documento = seleccionarTodo($columnas,$tablas,$condicion);
+
+/* falta el where areaAtencion =  area del usuario
+ */
 $data = array(
 		'header' => $header,
 		'contenido' => $contenido,
