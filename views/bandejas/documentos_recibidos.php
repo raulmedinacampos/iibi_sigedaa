@@ -56,7 +56,24 @@ if ( mysqli_num_rows($documento[1]) > 0 ) {
 		<td><?php echo $row['asunto']; ?></td>
 		<td><?php echo $row['fechaAlta']; ?></td>
 		<td><?php echo $row['area']; ?></td>
-		<td><span class="btn btn-default btn-sm digital">Adjuntar digital</span></td>
+		<td><?php
+		
+		if($row['estatus'] == 1){
+			?><span class="btn btn-default btn-sm digital">Adjuntar digital</span></td><?php 
+		} else {?>
+		
+		
+			<select id="dd_opc" name="dd_opc" class="form-control input-sm">
+			<option value="">Seleccione</option>
+			<option value="1">Abrir expediente</option>
+			<option value="2">Adjuntar a expediente</option>
+			<option value="3">Adjuntar a expediente de trabajador</option>
+			<option value="4">Enterado</option>
+			<option value="5">Regresar turno</option>
+			</select>
+		
+		<?php
+		}?>
 	</tr>
 	<?php
 	}
