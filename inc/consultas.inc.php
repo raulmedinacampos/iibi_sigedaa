@@ -285,7 +285,7 @@ function borrar($tabla,$condicion){
 	
 /*Transacciones*/
 	
-function iUsuario($valsEmpleado,$valsPuesto,$valsUsuario){
+function iUsuario($valsEmpleado,$valsPuesto){
 	$sql = "SET AUTOCOMMIT=0;";
 	$resultado=mysqli_query($GLOBALS['conexion'],$sql);
 
@@ -307,9 +307,11 @@ function iUsuario($valsEmpleado,$valsPuesto,$valsUsuario){
 				eMailOf,
 				fechaIngreso,
 				RFC,
-				CURP)
+				CURP,
+				estatus)
 			VALUES (".$valsEmpleado.",1)";
 		
+
 	$resultado=mysqli_query($GLOBALS['conexion'],$sql);
 	$newEmp = mysqli_insert_id($GLOBALS['conexion']);
 	
@@ -317,13 +319,17 @@ function iUsuario($valsEmpleado,$valsPuesto,$valsUsuario){
 	$resultado=mysqli_query($GLOBALS['conexion'],$sql);
 		
 	if ($resultado) {
-		echo $sql = "COMMIT";
-		$resultado=mysqli_query($GLOBALS['conexion'],$sql);}
+		$sql = "COMMIT";
+		$resultado=mysqli_query($GLOBALS['conexion'],$sql);
+		$regreso[0] = 1;
+		$regreso[1] = mysqli_affected_rows($GLOBALS['conexion']);}
+
 	else{
-		echo $sql = "ROLLBACK;";
-		$resultado=mysqli_query($GLOBALS['conexion'],$sql);}
+		$sql = "ROLLBACK;";
+		$resultado=mysqli_query($GLOBALS['conexion'],$sql);
+		$regreso[1];
+		errorConsulta(1,mysqli_error($GLOBALS['conexion']),$sql);
+	}
 	
-	return $sql;}
-	
-	
+	return $regreso;}
 ?>

@@ -18,7 +18,7 @@ $correoInst = (isset($_POST['correoInst'])) ? addslashes($_POST['correoInst']) :
 
 $iniciales = strtoupper(substr($nombre, 0, 1).substr($apPaterno, 0, 1).substr($apMaterno, 0, 1));
 
-$valores =	$grado.', "'.
+$valsEmpleado ='"'.$grado.'", "'.
 			$nombre.'","'.
 			$apPaterno.'","'.
 			$apMaterno.'","'.
@@ -34,7 +34,11 @@ $valores =	$grado.', "'.
 			$rfc.'","'.
 			$curp.'"';
 
-$insertar = insertar("empleado", $valores);
+$valsPuesto = '"'.$puesto.'", '.
+		      $area.', "'.
+		      $fechaEntrada.'"';
+			
+$insertar = iUsuario($valsEmpleado, $valsPuesto);
 
 if ( $insertar[0] == 1 ) {
 } else {
