@@ -311,25 +311,27 @@ function iUsuario($valsEmpleado,$valsPuesto){
 				estatus)
 			VALUES (".$valsEmpleado.",1)";
 		
-
 	$resultado=mysqli_query($GLOBALS['conexion'],$sql);
 	$newEmp = mysqli_insert_id($GLOBALS['conexion']);
 	
-	$sql = "INSERT INTO puesto (idEmpleado,puesto,idArea,fechaInicio,estatus) values (".$newEmp.",".$valsPuesto.",1)";
-	$resultado=mysqli_query($GLOBALS['conexion'],$sql);
+	
+	/*El if de René =D*/
+	if(($newEmp=!0)&&($newEmp=!NULL)){
+		$sql = "INSERT INTO puesto (idEmpleado,puesto,idArea,fechaInicio,estatus) values (".$newEmp.",".$valsPuesto.",1)";
+		$resultado=mysqli_query($GLOBALS['conexion'],$sql);}
+	else{
+		errorConsulta(1,mysqli_error($GLOBALS['conexion']),$sql);}
 		
 	if ($resultado) {
 		$sql = "COMMIT";
 		$resultado=mysqli_query($GLOBALS['conexion'],$sql);
 		$regreso[0] = 1;
 		$regreso[1] = mysqli_affected_rows($GLOBALS['conexion']);}
-
 	else{
 		$sql = "ROLLBACK;";
 		$resultado=mysqli_query($GLOBALS['conexion'],$sql);
 		$regreso[1];
-		errorConsulta(1,mysqli_error($GLOBALS['conexion']),$sql);
-	}
+		errorConsulta(1,mysqli_error($GLOBALS['conexion']),$sql);}
 	
 	return $regreso;}
 ?>
