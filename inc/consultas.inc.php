@@ -4,9 +4,15 @@ $conexion = conectar();
 
 /*IMPORTANTE LA COMPARACION DEL WHERE NO ES SENSITIVA, ES DECIR IGNORA MAYÚSCULAS Y MINÚSCULAS*/
 
-$ERROR = "[global]<br>Ocurrió un error, favor de comunicarse con el administrador del sistema.";
-$err_update = "[global]<br>No se realizó alguna actualización. Favor de comunicarse con el administrador.";
-$err_select = "[global]<br>No se encontraron coincidencias.";
+
+/*errorConsulta no guarda el usuario que hace la consulta, solo guarda "1"
+ *
+ * verificar si se puede usar $_SESSION['idUsuario'] en todos los casos
+ * */
+
+$ERROR = "[]<br>Ocurrió un error, favor de comunicarse con el administrador del sistema.";
+$err_update = "[]<br>No se realizó alguna actualización. Favor de comunicarse con el administrador.";
+$err_select = "[]<br>No se encontraron coincidencias.";
 
 
 
@@ -51,23 +57,24 @@ function maxEnAnio($columna,$colFecha,$tabla){
 	return $seleccion["maxEnAnio"];}
 
 
-/*Funcion maxEnAnioCond($columna,$colFecha,$tabla,$condicion)
-	
-- Compara el año actual con el de la columna $colFecha
-y obtiene el maximo consecutivo en el año actual con una condici�n dada*/
-	
-	
-	
-function maxEnAnioCond($columna,$colFecha,$tabla,$condicion){
-	$seleccion=seleccionar("max(".$columna.") as maxEnAnio",$tabla,"YEAR(".$colFecha.") = YEAR( NOW()) and ".$condicion);
-	return $seleccion["maxEnAnio"];}
-	
-	
 /*Funcion contar ($columna, $tabla)
 
 - Cuenta el número de columnas de la $tabla.
   Regresa el valor encontrado.,
   pero funciona con maximo(parametros)+1, que daría 1*/
+	
+	
+/*Funcion maxEnAnioCond($columna,$colFecha,$tabla,$condicion)
+	
+- Compara el año actual con el de la columna $colFecha
+y obtiene el maximo consecutivo en el año actual con una condici󮠤ada*/
+	
+	
+	
+function maxEnAnioCond($columna,$colFecha,$tabla,$condicion){
+	$seleccion=seleccionar("max(".$columna.") as maxEnAnio",$tabla,"YEAR(".$colFecha.") = YEAR( NOW()) and ".$condicion);
+	return $seleccion["maxEnAnio"];}	
+	
 
 function contar($columna, $tabla){
 	$seleccion=seleccionar("count(*) as cuenta",$tabla,1);
@@ -89,7 +96,8 @@ function contar($columna, $tabla){
 	 
  function seleccionar($columnas,$tablas,$condicion){
 	$consulta="select ".$columnas." from ".$tablas. " where ".$condicion;
-//	echo "<br>".$consulta;
+	//echo "<br>".$consulta;
+	
 	$respuesta=mysqli_query($GLOBALS['conexion'],$consulta);
 	if(mysqli_error($GLOBALS['conexion'])){
 	// si hubo errores en la consulta
@@ -100,8 +108,8 @@ function contar($columna, $tabla){
 	else{
 		if(mysqli_affected_rows($GLOBALS['conexion'])!=0)
 			$regreso = mysqli_fetch_array($respuesta);
-		else
-			echo $GLOBALS['err_select'];}
+		else{
+			$regreso =0;}}
 	return $regreso;}
 
 
@@ -127,14 +135,34 @@ function seleccionarSinMsj($columnas,$tablas,$condicion){
 	$respuesta=mysqli_query($GLOBALS['conexion'],$consulta);
 	if(mysqli_error($GLOBALS['conexion'])){
 	// si hubo errores en la consulta
-		$regreso = $GLOBALS['ERROR'];
+		$regreso = 0;
 		errorConsulta(1,mysqli_error($GLOBALS['conexion']),$consulta);}
 	else{
 		if(mysqli_affected_rows($GLOBALS['conexion'])!=0)
-			$regreso = mysqli_fetch_array($respuesta);}
+			$regreso = mysqli_fetch_array($respuesta);
+		else
+			$regreso=0;}
+		
 	return $regreso;}
 
 
+
+
+function seleccionarSinMsj2($columnas,$tablas,$condicion){
+	$regreso = "";
+	$consulta="select ".$columnas." from ".$tablas. " where ".$condicion;
+	$respuesta=mysqli_query($GLOBALS['conexion'],$consulta);
+	if(mysqli_error($GLOBALS['conexion'])){
+	// si hubo errores en la consulta
+		$regreso = 0;
+		errorConsulta(1,mysqli_error($GLOBALS['conexion']),$consulta);}
+	else{
+		if(mysqli_affected_rows($GLOBALS['conexion'])!=0)
+			$regreso = mysqli_fetch_array($respuesta);
+		else
+			$regreso = 0;}
+		
+	return $regreso;}
 	
 	
 /*Función seleccionarTodo($columnas,$tablas,$condicion)
@@ -166,13 +194,15 @@ function seleccionarTodo($columnas,$tablas,$condicion){
 		$regreso[0] = 0;
 		$regreso[1] = $GLOBALS['ERROR'];
 		errorConsulta(1,mysqli_error($GLOBALS['conexion']),$consulta);
-		echo $regreso[1];}
+	}
 	else{
-		$regreso[0] = 1;
-		if(mysqli_affected_rows($GLOBALS['conexion'])!=0)
-			$regreso[1] = $respuesta;
-		else
-			echo $GLOBALS['err_select'];}
+		if(mysqli_affected_rows($GLOBALS['conexion'])!=0){
+			$regreso[0] = 1;
+			$regreso[1] = $respuesta;}
+		else{
+			$regreso[0]=0;
+			$regreso[1] = $GLOBALS['err_select'];}
+	}
 	return $regreso;}
 
 
@@ -184,13 +214,16 @@ function seleccionarTodoSM($columnas,$tablas,$condicion){
 	if(mysqli_error($GLOBALS['conexion'])){
 	// si hubo errores en la consulta
 		$regreso[0] = 0;
-		$regreso[1] = $GLOBALS['ERROR'];
+		$regreso[1] = 0;
 		errorConsulta(1,mysqli_error($GLOBALS['conexion']),$consulta);
-		echo $regreso[1];}
+	}
 	else{
-		$regreso[0] = 1;
-		if(mysqli_affected_rows($GLOBALS['conexion'])!=0)
-			$regreso[1] = $respuesta;
+		if(mysqli_affected_rows($GLOBALS['conexion'])!=0){
+			$regreso[0] = 1;
+			$regreso[1] = $respuesta;}
+		else{
+			$regreso[0]=0;
+			$regreso[1]=0;}
 		}
 	return $regreso;}
 
@@ -217,13 +250,11 @@ function actualizar($tabla,$valores, $condicion){
 			$regreso[1] = mysqli_affected_rows($GLOBALS['conexion']);}
 		else{
 			$regreso[0] = 0;
-			$regreso[1] = $GLOBALS['err_update'];
-//			echo $regreso[1];
-			}}
+			$regreso[1] = $GLOBALS['err_update'];}
+	}
 	else{
 		$regreso[0] = 0;
-		$regreso[1] = $GLOBALS['ERROR'];
-//		echo $regreso[1];
+		$regreso[1] = mysqli_error($GLOBALS['conexion']);
 		errorConsulta(1,mysqli_error($GLOBALS['conexion']),$consulta);}
 	return $regreso;}
 
@@ -246,8 +277,7 @@ function insertar($tabla,$valores){
 		$regreso[1] = mysqli_affected_rows($GLOBALS['conexion']);}
 	else{
 		$regreso[0] = 0;
-		$regreso[1] = $GLOBALS['ERROR'];
-		echo $regreso[1];
+		$regreso[1] = mysqli_error($GLOBALS['conexion']);
 		errorConsulta(1,mysqli_error($GLOBALS['conexion']),$consulta);}
 	return $regreso;}
 	
@@ -280,12 +310,62 @@ function borrar($tabla,$condicion){
 			$regreso[1]= $GLOBALS['err_select'];
 			echo $GLOBALS['err_select'];}}
 	return $regreso;}
-
-
 	
-/*Transacciones*/
+	
+	
+	
 	
 function iUsuario($valsEmpleado,$valsPuesto){
+	$sql = "SET AUTOCOMMIT=0;";
+	$resultado=mysqli_query($GLOBALS['conexion'],$sql);
+	
+	$sql = "BEGIN;";
+	$resultado=mysqli_query($GLOBALS['conexion'],$sql);
+	
+	$sql = "INSERT INTO empleado (
+			gradoAcad,
+			nombre,
+			apellidoP,
+			apellidoM,
+			iniciales,
+			noTrabajador,
+			noCuenta,
+			telFijo,
+			telMovil,
+			telOficina,
+			eMailPers,
+			eMailOf,
+			fechaIngreso,
+			RFC,
+			CURP,
+			estatus)
+		VALUES (".$valsEmpleado.",1)";
+
+	$resultado=mysqli_query($GLOBALS['conexion'],$sql);
+	$newEmp = mysqli_insert_id($GLOBALS['conexion']);
+	/*verificar que $newEmp esté pasando. hubo errores en la transaccion InsertaEmpleado*/
+
+	if(($newEmp=!0)&&($newEmp=!NULL)){
+		$sql = "INSERT INTO puesto (idEmpleado,puesto,idArea,fechaInicio,estatus) values (".$newEmp.",".$valsPuesto.",1)";
+		$resultado=mysqli_query($GLOBALS['conexion'],$sql);}
+	else{
+		errorConsulta(1,mysqli_error($GLOBALS['conexion']),$sql);}
+			
+	if ($resultado) {
+		$sql = "COMMIT";
+		$regreso[0] = mysqli_query($GLOBALS['conexion'],$sql);
+		$regreso[1] = mysqli_affected_rows($GLOBALS['conexion']);}
+	else{
+		$sql = "ROLLBACK;";
+		$resultado=mysqli_query($GLOBALS['conexion'],$sql);
+		$regreso[0]=0;
+		$regreso[1]=0;
+		errorConsulta(1,mysqli_error($GLOBALS['conexion']),$sql);}
+	
+return $regreso;}
+
+
+function trInsertEmpleado($valsEmpleado,$valsPuesto){
 	$sql = "SET AUTOCOMMIT=0;";
 	$resultado=mysqli_query($GLOBALS['conexion'],$sql);
 
@@ -293,45 +373,78 @@ function iUsuario($valsEmpleado,$valsPuesto){
 	$resultado=mysqli_query($GLOBALS['conexion'],$sql);
 
 	$sql = "INSERT INTO empleado (
-				gradoAcad,
-				nombre,
-				apellidoP,
-				apellidoM,
-				iniciales,
-				noTrabajador,
-				noCuenta,
-				telFijo,
-				telMovil,
-				telOficina,
-				eMailPers,
-				eMailOf,
-				fechaIngreso,
-				RFC,
-				CURP,
-				estatus)
-			VALUES (".$valsEmpleado.",1)";
-		
+			gradoAcad, 		nombre,
+			apellidoP,		apellidoM,
+			iniciales,		noTrabajador,
+			noCuenta,		telFijo,
+			telMovil,		telOficina,
+			eMailPers,		eMailOf,
+			fechaIngreso,	RFC,
+			CURP,			estatus)
+		VALUES (".$valsEmpleado.",1)";
+
 	$resultado=mysqli_query($GLOBALS['conexion'],$sql);
 	$newEmp = mysqli_insert_id($GLOBALS['conexion']);
+	$temp = $newEmp;
 	
-	
-	/*El if de Ren� =D*/
 	if(($newEmp=!0)&&($newEmp=!NULL)){
-		$sql = "INSERT INTO puesto (idEmpleado,puesto,idArea,fechaInicio,estatus) values (".$newEmp.",".$valsPuesto.",1)";
+		$sql = "INSERT INTO puesto (idEmpleado,puesto,idArea,correoPuesto,fechaInicio,estatus) values (".$temp.",".$valsPuesto.",1)";
 		$resultado=mysqli_query($GLOBALS['conexion'],$sql);}
 	else{
 		errorConsulta(1,mysqli_error($GLOBALS['conexion']),$sql);}
-		
+				
 	if ($resultado) {
 		$sql = "COMMIT";
-		$resultado=mysqli_query($GLOBALS['conexion'],$sql);
-		$regreso[0] = 1;
+		$regreso[0] = mysqli_query($GLOBALS['conexion'],$sql);
 		$regreso[1] = mysqli_affected_rows($GLOBALS['conexion']);}
 	else{
 		$sql = "ROLLBACK;";
 		$resultado=mysqli_query($GLOBALS['conexion'],$sql);
-		$regreso[1];
+		$regreso[0]=0;
+		$regreso[1]=0;
+		errorConsulta(1,mysqli_error($GLOBALS['conexion']),$sql);}
+	return $regreso;}
+
+	
+	
+function trNuevoSAC($update,$insert,$idPuestoAnt){
+	$sql = "SET AUTOCOMMIT=0;";
+	$resultado=mysqli_query($GLOBALS['conexion'],$sql);
+	
+	$sql = "BEGIN;";
+	$resultado=mysqli_query($GLOBALS['conexion'],$sql);
+	
+	$sql = "INSERT INTO puesto (
+			idPuesto,
+			puesto,
+			idEmpleado,
+			idArea,
+			correoPuesto,
+			fechaInicio,
+			fechaModif,
+			estatus)
+		VALUES (".$insert.",1)";
+	
+	$resultado=mysqli_query($GLOBALS['conexion'],$sql);
+	$newPuesto = mysqli_insert_id($GLOBALS['conexion']);
+	
+	if(($newPuesto=!0)&&($newPuesto=!NULL)){
+		$sql = "UPDATE puesto SET ".$update." WHERE idPuesto=".$idPuestoAnt;
+		$resultado=mysqli_query($GLOBALS['conexion'],$sql);}
+	else{
 		errorConsulta(1,mysqli_error($GLOBALS['conexion']),$sql);}
 	
-	return $regreso;}
+	if ($resultado) {
+		$sql = "COMMIT";
+		$regreso[0] = mysqli_query($GLOBALS['conexion'],$sql);;
+		$regreso[1] = mysqli_affected_rows($GLOBALS['conexion']);}
+	else{
+		$sql = "ROLLBACK;";
+		$resultado=mysqli_query($GLOBALS['conexion'],$sql);
+		$regreso[0]=0;
+		$regreso[1]=0;
+		errorConsulta(1,mysqli_error($GLOBALS['conexion']),$sql);}
+return $regreso;}
+	
+
 ?>

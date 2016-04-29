@@ -4,7 +4,7 @@
 
 <table class="table table-striped table-condensed">
 <?php
-if ( mysqli_num_rows($documento[1]) > 0 ) {
+if ( $documento[0]!=0) {
 ?>
 	<tr>
 		<th>Folio</th>
@@ -77,14 +77,11 @@ if ( mysqli_num_rows($documento[1]) > 0 ) {
 	</tr>
 	<?php
 	}
-} else {
-?>
-	<tr>
-		<td>No hay documentos disponibles</td>
-	</tr>
-<?php
-}
-?>
+} 
+
+
+else {?>
+	<tr><td>No hay documentos disponibles</td></tr><?php }?>
 </table>
 
 <!-- Ventana modal -->

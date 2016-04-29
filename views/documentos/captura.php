@@ -1,7 +1,11 @@
 <form method="post" enctype="multipart/form-data" id="formSolicitud" name="formSolicitud" class="form-horizontal" action="">
+<h4>Captura de documentos recibidos</h4>
+<p>Por favor, ingrese la información del documento recibido, considerando que los campos marcados con (*) son obligatorios.</p>	
+	
+	
 	<div class="form-group">
 		<label class="col-sm-2 control-label obligatorio">Tipo de documento</label>
-		<div class="col-sm-4">
+		<div class="col-sm-5">
 			<select id="tipo_documento" name="tipo_documento" class="form-control">
 				<option value="">Seleccione</option>
 				<?php
@@ -15,7 +19,7 @@
 		</div>
 		
 		<label class="col-sm-2 control-label">Núm. Oficio / Circular</label>
-		<div class="col-sm-2">
+		<div class="col-sm-3">
 			<input id="num_oficio" name="num_oficio" class="form-control" />
 		</div>
 	</div>
@@ -29,30 +33,30 @@
 	
 	<div class="form-group">
 		<label class="col-sm-2 control-label obligatorio">Dirigido a</label>
-		<div class="col-sm-4">
+		<div class="col-sm-10">
 			<input id="dirigido_a" name="dirigido_a" class="form-control" />
 		</div>
-		
-		<label class="col-sm-2 control-label obligatorio">Cargo</label>
+		<!--		
+ 		<label class="col-sm-2 control-label obligatorio">Cargo</label>
 		<div class="col-sm-4">
 			<input id="cargo" name="cargo" class="form-control" />
-		</div>
+		</div> -->
 	</div>
 	
 	<div class="form-group">
 		<label class="col-sm-2 control-label obligatorio">Remitente</label>
-		<div class="col-sm-4">
+		<div class="col-sm-10">
 			<input id="remitente" name="remitente" class="form-control" />
 		</div>
-		
+		<!--		
 		<label class="col-sm-2 control-label">Cargo del remitente</label>
 		<div class="col-sm-4">
 			<input id="cargo_remitente" name="cargo_remitente" class="form-control" />
-		</div>
+		</div>-->
 	</div>
 	
 	<div class="form-group">
-		<label class="col-sm-2 control-label">Dependencia UNAM</label>
+		<label class="col-sm-2 control-label">*Dependencia remisora UNAM </label>
 		<div class="col-sm-4">
 			<input id="dependencia_unam" name="dependencia_unam" class="form-control typeahead" autocomplete="off" />
 		</div>
@@ -64,7 +68,7 @@
 			<input id="otra_institucion" name="otra_institucion" disabled="disabled" class="form-control" />
 		</div>
 	</div>
-	
+	<!--
 	<div class="form-group">
 		<label class="col-sm-2 control-label">Entidad subordinada emisora</label>
 		<div class="col-sm-4">
@@ -75,34 +79,29 @@
 		<div class="col-sm-4">
 			<input id="ccp" name="ccp" class="form-control" />
 		</div>
-	</div>
+	</div>-->
 	
 	<div class="form-group">
 		<label class="col-sm-2 control-label obligatorio">Información relevante</label>
-		<div class="col-sm-10">
+		<div class="col-sm-4">
 			<textarea rows="3" id="informacion_relevante" name="informacion_relevante" class="form-control"></textarea>
 		</div>
-	</div>
-	
-	<div class="form-group">
+
 		<label class="col-sm-2 control-label">Anexos <span class="glyphicon glyphicon-question-sign" data-toggle="tooltip" title="Documentos con información soporte incluídos en el documento que se recibe"></span></label>
-		<div class="col-sm-10">
+		<div class="col-sm-4">
 			<textarea rows="3" id="anexos" name="anexos" class="form-control"></textarea>
 		</div>
 	</div>
 	
 	<div class="form-group">
-		<label class="col-sm-2 control-label obligatorio">Núm. de hojas incluyendo anexos</label>
+		<label class="col-sm-2 control-label obligatorio">Núm. de hojas (incluyendo anexos)</label>
 		<div class="col-sm-1">
 			<input id="num_hojas" name="num_hojas" class="form-control" />
 		</div>
 		
-		<div class="checkbox col-sm-2 col-sm-offset-3 control-label">
-			<label><input type="checkbox" id="chk_no_original" name="chk_no_original" value="1" checked="checked" /> No original</label>
+		<div class="checkbox col-sm-3 control-label">
+			<label><input type="checkbox" id="chk_no_original" name="chk_no_original" value="1"/> El documento no es original</label>
 		</div>
-	</div>
-	
-	<div class="form-group">
 		<label class="col-sm-2 control-label obligatorio">Para atender por</label>
 		<div class="col-sm-4">
 			<select id="atender_por" name="atender_por" class="form-control">

@@ -32,13 +32,11 @@ $folio = "E/".$_SESSION['siglasArea']."/".$consecArea."/".date('Y');
 
 $valores= $maxID.','.$consecArea.',"'.$atender_por.'",null,"'.$folio.'",'.$tipo_documento.',"'.$asunto.'","'.$numOficio.'","'.$destinatario.'","'.$cargoDes.'","'.$remitente.'","'.$cargoRem.'","'.$dependencia.'","'.$subDep.'","'.$ccp.'","'.$info_relevante.'","'.$anexos.'",'.$num_hojas.','.$no_orginal.',null,null,null,'.$_SESSION['idAreaPadre'].','.$idUsuAlta.',null,now(),null,1';
  
-$insertar = insertar("documento", $valores);
+$insertar = insertar("documento", $valores); 
 if($insertar[0]==1){
-	echo "<p>Número de folio ".$folio."</p>";
-	echo "<p>Recibido</p>". $_SESSION['iniciales'];
-	echo "<p>Fecha</p>".date('d/m/Y');
-	echo "<p>Hora</p>".date('H:i');}
+	echo "<p><b>Número de folio</b> ".$folio."</p>";
+	echo "<p><b>Recibido por</b> ". $_SESSION['iniciales'];
+	echo "<p><b>Fecha y hora</b> ".date('d/m/Y  H:i');}
 else 
 	echo "Ocurió un problema, favor de comunicarse con el adminsitrador.";
-
 ?>

@@ -83,7 +83,7 @@ function enviarDatos() {
 		if( $("#formSolicitud").valid() ) {
 			$.post('guardarDoc', $("#formSolicitud").serialize(), function(data) {
 				$(".modal-dialog").addClass("modal-sm");
-				$(".modal-title").html('Recepción de documentos - Información para sello');
+				$(".modal-title").html('Información para sello de recibido');
 				$(".modal-body").html(data);
 				$(".modal-footer .btn-default").css("display", "none");
 				$("#myModal").modal('show');
