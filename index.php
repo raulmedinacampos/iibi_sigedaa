@@ -140,6 +140,28 @@ Flight::route('/archivo/traslado-de-expedientes', function() {
 });
 /* Fin Archivo */
 
+/* Formatos */
+Flight::route('/formatos/inventario-general', function() {
+	require_once 'controllers/formatos/inventario_general_controller.php';
+});
+
+Flight::route('/formatos/inventario-de-transferencia-primaria', function() {
+	require_once 'controllers/formatos/inventario_transferencia_primaria_controller.php';
+});
+
+Flight::route('/formatos/inventario-de-transferencia-secundaria', function() {
+	require_once 'controllers/formatos/inventario_transferencia_secundaria_controller.php';
+});
+
+Flight::route('/formatos/inventario-de-baja-documental', function() {
+	require_once 'controllers/formatos/inventario_baja_documental_controller.php';
+});
+
+Flight::route('/formatos/guia-simple-de-archivos', function() {
+	require_once 'controllers/formatos/guia_simple_controller.php';
+});
+/* Fin formatos */
+
 /* Sección Administrador */
 Flight::route('/listado-empleados/', function() {
 	require_once 'controllers/lista_empleados_controller.php';

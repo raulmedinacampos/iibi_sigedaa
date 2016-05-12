@@ -1,0 +1,136 @@
+body, html {
+	margin: 0;
+	font-family: Calibri, Helvetica, Arial, sans-serif;
+}
+
+div.datos {
+	width: 48%;
+	font-size: 9pt;
+}
+
+div.datos strong {
+	text-transform: uppercase;
+}
+
+div.izq {
+	float: left;
+}
+
+div.der {
+	float: right;
+}
+
+div.clear {
+	clear: both;
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+table th {
+	padding: 5pt 2pt; 
+	background-color: #1272A0;
+	border: 0.5pt solid #080808;
+	font-size: 7pt;
+	font-weight: normal;
+	color: #FFFFFF;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+table td {
+	padding: 3pt 2pt;
+	border: 0.5pt solid #080808;
+	font-size: 9pt;
+}
+
+table td.izq {
+	text-align: left;
+}
+
+table td.centrado {
+	text-align: center;
+}
+
+table td.sin-borde {
+	border: none;
+	vertical-align: top;
+}
+
+table td.titulo {
+	background-color: #ABABAB;
+	font-weight: bold;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+.firmas {
+	text-align: center;
+}
+
+.firma {
+	float: left;
+	width: 28%;
+	margin: 0 20pt;
+	padding: 0 10pt 10pt;
+	border-color: #000000;
+	border-width: 1pt;
+	border-style: solid;
+	font-size: 10pt;
+	font-weight: bold;
+	text-align: center;
+}
+
+.primero {
+	margin-left: 0;
+}
+
+.ultimo {
+	margin-right: 0;
+}
+
+.dos {
+	margin-left: 17%;
+}
+
+.cuatro {
+	width: 19.5%;
+}
+
+.firma .cargo {
+	margin-top: 45pt;
+	margin-bottom: 0;
+	border-top: 1pt solid #000000;
+}
+
+.firma .cargo, .firma .nombre {
+	font-size: 9pt;
+	font-weight: normal;
+}
+
+.header {
+	position: relative;
+}
+
+.header table td {
+	border: none;
+	font-size: 14pt;
+}
+
+.header td p {
+	margin: 0;
+}
+
+.footer {
+	font-size: 8pt;
+	text-align: right;
+}
+
+.nota {
+	position: absolute;
+	bottom: 30pt;
+	font-size: 9pt;
+	color: #080808;
+}
