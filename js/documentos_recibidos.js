@@ -69,19 +69,6 @@ function adjuntarDigital() {
 		$(".modal-footer #btn_modal_ok").css("display", "inline");
 		$(".modal-footer #btn_modal_final").css("display", "none");
 		$("#myModal").modal('show');
-		
-		$("#btn_modal_ok").click(function() {
-			$(".modal-dialog").addClass("modal-sm");
-			$(".modal-title").html('Adjuntar documento');
-			$(".modal-body").html('<p>Documento digital adjuntado</p>');
-			$(".modal-footer .btn-default").css("display", "none");
-			$(".modal-footer #btn_modal_ok").css("display", "none");
-			$(".modal-footer #btn_modal_final").css("display", "inline");
-			
-			$("#btn_modal_final").click(function() {
-				$("#myModal").modal('hide');
-			});
-		});
 	});
 }
 

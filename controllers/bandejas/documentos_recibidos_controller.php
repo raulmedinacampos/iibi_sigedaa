@@ -1,6 +1,9 @@
 <?php
 session_start();
 
+$header['js'][] = 'jquery.ui.widget';
+$header['js'][] = 'jquery.iframe-transport';
+$header['js'][] = 'jquery.fileupload';
 $header['js'][] = 'documentos_recibidos';
 
 $contenido = 'bandejas/documentos_recibidos';
