@@ -166,6 +166,10 @@ Flight::route('/formatos/guia-simple-de-archivos', function() {
 Flight::route('/listado-empleados/', function() {
 	require_once 'controllers/lista_empleados_controller.php';
 });
+
+Flight::route('/administrador/lista-de-usuarios', function() {
+	require_once 'controllers/administrador/lista_usuarios_controller.php';
+});
 	
 Flight::route('/administrador/alta-de-empleado', function() {
 	require_once 'controllers/administrador/empleado_controller.php';
