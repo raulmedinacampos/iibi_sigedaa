@@ -43,7 +43,7 @@ $(function() {
 });
 </script>
 
-<h4>Adjuntar documento digital al folio E/SAD/123/2015</h4>
+<h4>Adjuntar documento digital al folio <?php echo $folio;?></h4>
 
 <form method="post" enctype="multipart/form-data" id="formAdjuntar" name="formAdjuntar" action="guardar-digital">
 	<label>Buscar</label>

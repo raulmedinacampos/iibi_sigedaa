@@ -57,6 +57,11 @@ Flight::route('/documentos/adjuntar-documento-digital/', function() {
 	require_once 'controllers/documentos/adjuntar_digital_controller.php';
 });
 
+Flight::route('/documentos/guardar-digital/', function() {
+	require_once 'controllers/bandejas/guardaDigital_controller.php';
+});
+	
+
 Flight::route('/documentos/adjuntar-documento-anexo/', function() {
 	require_once 'controllers/documentos/documento_anexo_controller.php';
 });

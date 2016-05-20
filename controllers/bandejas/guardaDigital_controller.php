@@ -10,7 +10,7 @@ require 'inc/herramientas.inc.php';
 $maxID=maximo("idArchivoDigital", "archivoDigital")+1;
 $idUsuModif = $_SESSION['idUsuario'];
 
-$valores = $maxID.",'".$nombre."','".$ruta."',1,'PDF',1,".$idUsuModif.",now(),1";
+$valores = $maxID.",'".$nombre."','".$ruta."',0,'PDF',1,".$idUsuModif.",now(),1"
 
 insertar($tabla, $valores);
 $newVar = mysqli_insert_id($GLOBALS['conexion']);
@@ -56,10 +56,10 @@ if($error=!0){
 						$subida=0;
 			}
 
-
+//areaBase puede ser 1:direccion 2: secacad 3:sectec 4:secadmin
 			if($subida==1){
 				$maxID=maximo("idArchivoDigital", "archivoDigital")+1;
-				$valores = $maxID.",'".$folio."','".$tipoArchivo."','".$nombreDoc."','/_".date('Y')."/',0,3,".$_SESSION['idUsuario'].",now(),1";
+				$valores = $maxID.",'".$folio."','SGD','".$nombreDoc."','$areaBase/_".date('Y')."/',0,3,".$_SESSION['idUsuario'].",now(),1";
 				$insertar = insertar('archivoDigital', $valores);}
 }//del if error
 echo $subida;
