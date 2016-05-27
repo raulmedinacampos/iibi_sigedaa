@@ -15,7 +15,7 @@ $(function() {
 	        		$('#btn_modal_ok').off('click');
 	        		
 	        		$.post(
-	        			'../documentos/adjuntar-documento-digital',
+	        			'../documentos/insertar-registro-documento', //necesito hacer este controlador donde sólo se hace el insert
 	        			{'folio': folio},
 	        			function(d) {
 	        				if ( d == "") {
@@ -23,6 +23,7 @@ $(function() {
 	        				}
 	        				
 	        				data.submit();
+	        				window.location.href="documentos-recibidos";
 	        			}
 	        		);
 	            });
@@ -45,7 +46,7 @@ $(function() {
 
 <h4>Adjuntar documento digital al folio <?php echo $folio;?></h4>
 
-<form method="post" enctype="multipart/form-data" id="formAdjuntar" name="formAdjuntar" action="guardar-digital">
+<form method="post" enctype="multipart/form-data" id="formAdjuntar" name="formAdjuntar" action="../documentos/guardar-digital">
 	<label>Buscar</label>
 	<input type="file" id="documento" name="documento" class="filestyle" data-buttonText="Examinar" />
 </form>
